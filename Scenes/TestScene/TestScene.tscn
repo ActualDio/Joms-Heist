@@ -81,7 +81,6 @@ frowney = NodePath("Frown")
 texture = ExtResource("7_hwhrd")
 
 [node name="Frown" type="Sprite2D" parent="Scene/debugTestCam"]
-visible = false
 texture = ExtResource("8_wv5qw")
 
 [node name="Spotter" parent="Scene/debugTestCam" instance=ExtResource("5_gmojd")]
@@ -94,7 +93,7 @@ angle = 108.538
 color = Color(0.196078, 0.196078, 0.207843, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(586, 49)
+position = Vector2(580, 45)
 color = Color(1, 0.913725, 0.85098, 1)
 shadow_enabled = true
 texture = ExtResource("7_a0dxn")
