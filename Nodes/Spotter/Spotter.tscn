@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc87sc3p2vx6"]
+
+[ext_resource type="Script" path="res://Nodes/Spotter/Spotter.gd" id="1_w5tlb"]
+
+[node name="Spotter" type="Node2D"]
+script = ExtResource("1_w5tlb")
+angle = 29.0
