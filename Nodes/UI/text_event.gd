@@ -54,7 +54,7 @@ func _input(event: InputEvent) -> void:
 
 func updateText():
 	if dialogArray[currentLine].begins_with(">"):
-		charLabel.text = dialogArray[0].lstrip(">");
+		charLabel.text = dialogArray[currentLine].lstrip(">");
 		currentLine += 1;
 	textLabel.text = dialogArray[currentLine];
 	textLabel.visible_characters = 0;
