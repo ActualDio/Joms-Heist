@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7jxo6ksgtg26"]
+
+[ext_resource type="PackedScene" uid="uid://c8f42wsc3qnoi" path="res://Nodes/UI/TextEvent.tscn" id="1_3ty0n"]
+[ext_resource type="PackedScene" uid="uid://do5c2yuje28lm" path="res://Scenes/TestScene/TestScene.tscn" id="2_0478i"]
+
+[node name="DialogTestScene" type="Node2D"]
+
+[node name="UILayer" parent="." instance=ExtResource("1_3ty0n")]
+dialog = ">TestDialog
+This is some test dialog!
+I'm not sure if it will work right...
+This sentence is gonna be really really long on purpose, look how long it is!
+>New Character
+This text is spoken by a new character!
+Wow! I can't believe we can add new characters just like that!
+Wish I could maybe modify some kind of image to show better who is talking? oh well..."
+delay_between_chars = 0.032
+
+[node name="TestScene" parent="." instance=ExtResource("2_0478i")]
+
+[node name="Button" type="Button" parent="."]
+z_index = 4
+offset_left = 161.0
+offset_top = 95.0
+offset_right = 688.0
+offset_bottom = 194.0
+text = "Press ME"
+
+[connection signal="pressed" from="Button" to="UILayer" method="beginEvent"]

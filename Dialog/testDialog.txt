@@ -1,0 +1,4 @@
+>TestDialog
+This is some test dialog!
+I'm not sure if it will work right...
+This sentence is gonna be really really long on purpose, look how long it is!

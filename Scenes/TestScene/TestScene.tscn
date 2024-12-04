@@ -23,8 +23,6 @@ texture = SubResource("CanvasTexture_errjy")
 texture_region_size = Vector2i(64, 64)
 use_texture_padding = false
 0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [sub_resource type="TileSet" id="TileSet_e61ry"]
@@ -55,7 +53,7 @@ texture = ExtResource("1_1fvfi")
 [node name="DebugTilemap" type="TileMap" parent="Scene"]
 texture_filter = 1
 tile_set = SubResource("TileSet_e61ry")
-cell_quadrant_size = 64
+rendering_quadrant_size = 64
 format = 2
 layer_0/tile_data = PackedInt32Array(393217, 5, 0, 327681, 5, 0, 262145, 5, 0, 196609, 5, 0, 196608, 5, 0, 262144, 5, 0, 327680, 5, 0, 393216, 5, 0, 458752, 5, 0, 458753, 5, 0, 131072, 5, 0, 131073, 5, 0, 65537, 5, 0, 65536, 5, 0, 0, 5, 0, 524288, 5, 0, 1, 5, 0, 524289, 5, 0, 589824, 5, 0, 589825, 5, 0, 524290, 5, 0, 589826, 5, 0, 524291, 5, 0, 589827, 5, 0, 524292, 5, 0, 589828, 5, 0, 524293, 5, 0, 589829, 5, 0, 524294, 5, 0, 589830, 5, 0, 524295, 5, 0, 589831, 5, 0, 524296, 5, 0, 589832, 5, 0, 524297, 5, 0, 589833, 5, 0, 524298, 5, 0, 589834, 5, 0, 524299, 5, 0, 589835, 5, 0, 524300, 5, 0, 589836, 5, 0, 524301, 5, 0, 589837, 5, 0, 524302, 5, 0, 589838, 5, 0, 524303, 5, 0, 589839, 5, 0, 524304, 5, 0, 589840, 5, 0, 524305, 5, 0, 589841, 5, 0, 16, 5, 0, 65552, 5, 0, 131088, 5, 0, 196624, 5, 0, 262160, 5, 0, 327696, 5, 0, 393232, 5, 0, 458768, 5, 0, 17, 5, 0, 65553, 5, 0, 131089, 5, 0, 196625, 5, 0, 262161, 5, 0, 327697, 5, 0, 393233, 5, 0, 458769, 5, 0, 327690, 5, 0, 327689, 5, 0, 327688, 5, 0)
 
@@ -100,5 +98,5 @@ shadow_enabled = true
 texture = ExtResource("7_a0dxn")
 texture_scale = 7.15
 
-[connection signal="player_entered" from="Scene/debugTestCam/Spotter" to="Scene/debugTestCam" method="showFrowney" flags=18]
-[connection signal="player_exited" from="Scene/debugTestCam/Spotter" to="Scene/debugTestCam" method="showSmiley" flags=18]
+[connection signal="player_entered" from="Scene/debugTestCam/Spotter" to="Scene/debugTestCam" method="showFrowney"]
+[connection signal="player_exited" from="Scene/debugTestCam/Spotter" to="Scene/debugTestCam" method="showSmiley"]
