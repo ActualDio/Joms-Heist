@@ -1,24 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bc87sc3p2vx6"]
+[gd_scene load_steps=2 format=3 uid="uid://bc87sc3p2vx6"]
 
 [ext_resource type="Script" path="res://Nodes/Spotter/Spotter.gd" id="1_w5tlb"]
-[ext_resource type="Script" path="res://Nodes/Spotter/SightArea.gd" id="2_vhlxi"]
-
-[sub_resource type="Gradient" id="Gradient_ac1px"]
-offsets = PackedFloat32Array(0.824176, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_r4tv5"]
-gradient = SubResource("Gradient_ac1px")
 
 [node name="Spotter" type="Node2D"]
 rotation = 0.958186
 script = ExtResource("1_w5tlb")
-number_of_rays = 7
+number_of_rays = 8
 
 [node name="SightArea" type="Polygon2D" parent="."]
-position = Vector2(-13, -12)
-texture = SubResource("GradientTexture1D_r4tv5")
-script = ExtResource("2_vhlxi")
 
-[connection signal="player_entered" from="." to="SightArea" method="_on_spotter_player_entered"]
-[connection signal="player_exited" from="." to="SightArea" method="_on_spotter_player_exited"]
+[connection signal="player_entered" from="." to="." method="_on_player_entered"]
+[connection signal="player_exited" from="." to="." method="_on_player_exited"]

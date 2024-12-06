@@ -5,7 +5,13 @@
 
 [node name="Camera" type="Node2D"]
 
+[node name="Spotter" parent="." instance=ExtResource("2_76241")]
+position = Vector2(58, 73)
+rotation = 0.788889
+angle = 90.714
+
 [node name="Background" type="Sprite2D" parent="."]
+show_behind_parent = true
 position = Vector2(503, 305)
 scale = Vector2(6.1875, 4.53125)
 texture = ExtResource("1_i3o7o")
@@ -13,6 +19,3 @@ metadata/_edit_lock_ = true
 
 [node name="CameraSprite" type="Sprite2D" parent="."]
 metadata/_edit_lock_ = true
-
-[node name="Spotter" parent="." instance=ExtResource("2_76241")]
-position = Vector2(178, 133)
