@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 @export_multiline var dialog : String;
 
@@ -45,12 +45,15 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
-		if active && textLabel.visible_characters == textLabel.get_total_character_count():
-			currentLine += 1;
-			if currentLine >= dialogArray.size():
-				$AnimationPlayer.play("Out");
+		if active:
+			if textLabel.visible_characters == textLabel.get_total_character_count():
+				currentLine += 1;
+				if currentLine >= dialogArray.size():
+					$AnimationPlayer.play("Out");
+				else:
+					updateText();
 			else:
-				updateText();
+				textLabel.visible_characters = textLabel.get_total_character_count();
 
 func updateText():
 	if dialogArray[currentLine].begins_with(">"):
@@ -62,7 +65,12 @@ func updateText():
 func _on_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "Out":
 		get_tree().paused = false;
-		queue_free()
+		hide();
+		currentLine = 0;
+		started = false;
+		if dialogArray[0].begins_with(">"): #if the first line denotes a character... (this should usually be the case)
+			charLabel.text = dialogArray[0].lstrip(">");
+			currentLine += 1;
 	elif anim_name == "In":
 		active = true;
 		updateText();
