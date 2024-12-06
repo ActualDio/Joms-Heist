@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bh0c4xaaceexu"]
+
+[ext_resource type="Script" path="res://Nodes/room.gd" id="1_7fsdf"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y2272"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqabv"]
+
+[node name="RoomList" type="Node2D"]
+script = ExtResource("1_7fsdf")
+
+[node name="RectangularRoom" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="RectangularRoom"]
+
+[node name="RoomColision" type="StaticBody2D" parent="RectangularRoom"]
+physics_material_override = SubResource("PhysicsMaterial_y2272")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RectangularRoom/RoomColision"]
+shape = SubResource("RectangleShape2D_aqabv")
