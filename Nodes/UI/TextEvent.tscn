@@ -46,45 +46,6 @@ tracks/2/keys = {
 "values": [false, true]
 }
 
-[sub_resource type="Animation" id="Animation_nfntk"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Static:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.585062, 0.585062, 0.585062, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CharacterTitle:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(576, 61.56)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Textbox:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="Animation" id="Animation_r4miq"]
 resource_name = "Out"
 length = 0.40001
@@ -126,6 +87,45 @@ tracks/2/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_nfntk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Static:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.585062, 0.585062, 0.585062, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharacterTitle:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(576, 61.56)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Textbox:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cuian"]
 _data = {
 "In": SubResource("Animation_dsp1n"),
@@ -133,8 +133,14 @@ _data = {
 "RESET": SubResource("Animation_nfntk")
 }
 
-[node name="UILayer" type="CanvasLayer"]
+[node name="UILayer" type="Control"]
 process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_mlikg")
 dialog = ">TestDialog
 This is some test dialog!
@@ -143,6 +149,7 @@ This sentence is gonna be really really long on purpose, look how long it is!"
 
 [node name="Static" type="TextureRect" parent="."]
 modulate = Color(0.585062, 0.585062, 0.585062, 1)
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -151,7 +158,7 @@ grow_vertical = 2
 texture = ExtResource("2_01rec")
 
 [node name="Textbox" type="Control" parent="."]
-layout_mode = 3
+layout_mode = 1
 anchor_left = 0.1
 anchor_top = 0.13
 anchor_right = 0.9
@@ -182,7 +189,7 @@ text = "Here is where the Dialogue Goes. Now we're gonna stretch it out to see h
 scroll_active = false
 
 [node name="CharacterTitle" type="Control" parent="."]
-layout_mode = 3
+layout_mode = 1
 anchor_left = 0.5
 anchor_top = 0.095
 anchor_right = 0.5

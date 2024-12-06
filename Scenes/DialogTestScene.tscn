@@ -5,17 +5,6 @@
 
 [node name="DialogTestScene" type="Node2D"]
 
-[node name="UILayer" parent="." instance=ExtResource("1_3ty0n")]
-dialog = ">TestDialog
-This is some test dialog!
-I'm not sure if it will work right...
-This sentence is gonna be really really long on purpose, look how long it is!
->New Character
-This text is spoken by a new character!
-Wow! I can't believe we can add new characters just like that!
-Wish I could maybe modify some kind of image to show better who is talking? oh well..."
-delay_between_chars = 0.032
-
 [node name="TestScene" parent="." instance=ExtResource("2_0478i")]
 
 [node name="Button" type="Button" parent="."]
@@ -26,4 +15,18 @@ offset_right = 688.0
 offset_bottom = 194.0
 text = "Press ME"
 
-[connection signal="pressed" from="Button" to="UILayer" method="beginEvent"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UILayer" parent="CanvasLayer" instance=ExtResource("1_3ty0n")]
+visible = false
+dialog = ">TestDialog
+This is some test dialog!
+I'm not sure if it will work right...
+This sentence is gonna be really really long on purpose, look how long it is!
+>New Character
+This text is spoken by a new character!
+Wow! I can't believe we can add new characters just like that!
+Wish I could maybe modify some kind of image to show better who is talking? oh well..."
+delay_between_chars = 0.032
+
+[connection signal="pressed" from="Button" to="CanvasLayer/UILayer" method="beginEvent"]
