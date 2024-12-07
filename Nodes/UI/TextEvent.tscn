@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8f42wsc3qnoi"]
+[gd_scene load_steps=9 format=3 uid="uid://c8f42wsc3qnoi"]
 
 [ext_resource type="Theme" uid="uid://kncue5wmf60t" path="res://Themes/TextBoxTheme.tres" id="1_gjql6"]
 [ext_resource type="Script" path="res://Nodes/UI/text_event.gd" id="1_mlikg"]
 [ext_resource type="Theme" uid="uid://d3jmr5vwxye1k" path="res://Themes/CharacterNameTheme.tres" id="2_6lb7v"]
+[ext_resource type="AudioStream" uid="uid://bafs8tdl2aln1" path="res://Sounds/Vine Boom (Sound Effect).mp3" id="4_3gema"]
 
 [sub_resource type="Animation" id="Animation_dsp1n"]
 resource_name = "In"
@@ -184,7 +185,7 @@ anchor_bottom = 0.925
 offset_top = -4.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Here is where the Dialogue Goes. Now we're gonna stretch it out to see how much 2 lines is. Now we're gonna go for THREE lines."
+text = "If you design a quest, you are making a game"
 scroll_active = false
 
 [node name="CharacterTitle" type="Control" parent="."]
@@ -208,7 +209,7 @@ offset_right = 97.5
 offset_bottom = 19.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Evelyne"
+text = "Character Name"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -216,5 +217,10 @@ vertical_alignment = 1
 libraries = {
 "": SubResource("AnimationLibrary_cuian")
 }
+
+[node name="TextSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3gema")
+volume_db = -9.629
+bus = &"UIAudio"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
