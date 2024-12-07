@@ -15,7 +15,6 @@ dest_files=["res://.godot/imported/Trirong-ExtraLight.ttf-92eea4b5d8d0efc46bdb24
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
-disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48
