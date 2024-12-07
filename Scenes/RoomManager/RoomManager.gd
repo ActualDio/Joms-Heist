@@ -12,6 +12,7 @@ func _ready() -> void:
 		if r is Room:
 			r.connect("activated",roomEntered.bind(r));
 			r.connect("disabled",roomExited.bind(r));
+			r.connect("cameraUpdate",setNewCameraTarget)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func roomEntered(room : Room):
 	previousCurrentRoom = currentRoom;

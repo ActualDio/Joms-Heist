@@ -19,8 +19,12 @@ class_name Room;
 		if Engine.is_editor_hint():
 			queue_redraw();
 
+@onready var cameraPosPerma = cameraPos;
+@onready var cameraZoomPerma = cameraZoom;
+
 signal activated
 signal disabled
+signal cameraUpdate
 		
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -55,3 +59,17 @@ func _draw() -> void:
 		draw_rect(Rect2(Vector2.ZERO,size),Color.CORAL,false,3.0,false);
 		draw_circle(cameraPos,25.0,Color.LIGHT_PINK,false,3.0,true);
 		draw_rect(Rect2(cameraPos - Vector2((windowSize.x/cameraZoom)/2,(windowSize.y/cameraZoom)/2),windowSize/cameraZoom),Color.LIGHT_PINK,false,3.0,false);
+
+
+
+func _on_radio_interacted(radioPos) -> void: #Connect this to ur radios
+	cameraZoom = 3.0;
+	cameraPos = radioPos;
+	emit_signal("cameraUpdate");
+	
+
+
+func _on_text_event_finished() -> void: #Connect this to ur text events
+	cameraZoom = cameraZoomPerma;
+	cameraPos = cameraPosPerma;
+	emit_signal("cameraUpdate");

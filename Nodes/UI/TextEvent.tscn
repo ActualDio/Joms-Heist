@@ -133,7 +133,7 @@ _data = {
 "RESET": SubResource("Animation_nfntk")
 }
 
-[node name="UILayer" type="Control"]
+[node name="TextEvent" type="Control"]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -148,6 +148,7 @@ I'm not sure if it will work right...
 This sentence is gonna be really really long on purpose, look how long it is!"
 
 [node name="Static" type="TextureRect" parent="."]
+visible = false
 modulate = Color(0.585062, 0.585062, 0.585062, 1)
 layout_mode = 1
 anchors_preset = 15
