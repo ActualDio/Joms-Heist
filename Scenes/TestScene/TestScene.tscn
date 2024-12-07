@@ -1,102 +1,87 @@
-[gd_scene load_steps=15 format=3 uid="uid://do5c2yuje28lm"]
+[gd_scene load_steps=12 format=4 uid="uid://do5c2yuje28lm"]
 
-[ext_resource type="Texture2D" uid="uid://8mv8u03102yd" path="res://icon.svg" id="1_1fvfi"]
-[ext_resource type="Texture2D" uid="uid://ba8thuk05ajfu" path="res://icon_small.png" id="1_82ww6"]
-[ext_resource type="PackedScene" uid="uid://dakgb3c130kxp" path="res://Nodes/Player/Player.tscn" id="2_i0scs"]
-[ext_resource type="Texture2D" uid="uid://d1wmy50n7u6yl" path="res://icon_normal.png" id="3_ie7gv"]
-[ext_resource type="AudioStream" uid="uid://d0dov2rbdpoi3" path="res://music/Heist Theme_1.wav" id="5_gahhk"]
-[ext_resource type="PackedScene" uid="uid://bc87sc3p2vx6" path="res://Nodes/Spotter/Spotter.tscn" id="5_gmojd"]
-[ext_resource type="Script" path="res://Scenes/TestScene/debugTestCam.gd" id="6_uubpb"]
-[ext_resource type="Texture2D" uid="uid://c7rv10apd2awq" path="res://Nodes/Lights/defaultLight.png" id="7_a0dxn"]
-[ext_resource type="Texture2D" uid="uid://bps6dsh46hwcy" path="res://Nodes/Spotter/debugSmiley.png" id="7_hwhrd"]
-[ext_resource type="Texture2D" uid="uid://clvmyxe4bgcxe" path="res://Nodes/Spotter/debugFrowney.png" id="8_wv5qw"]
+[ext_resource type="Texture2D" uid="uid://8mv8u03102yd" path="res://icon.svg" id="1_l6h13"]
+[ext_resource type="Script" path="res://Scenes/defaultRoom/roomBase.gd" id="1_v3gos"]
+[ext_resource type="AudioStream" uid="uid://d0dov2rbdpoi3" path="res://music/Heist Theme_1.wav" id="4_i4wyr"]
+[ext_resource type="Script" path="res://Scenes/TestScene/debugTestCam.gd" id="5_k0hi8"]
+[ext_resource type="Texture2D" uid="uid://bps6dsh46hwcy" path="res://Nodes/Spotter/debugSmiley.png" id="6_3x5tp"]
+[ext_resource type="Texture2D" uid="uid://clvmyxe4bgcxe" path="res://Nodes/Spotter/debugFrowney.png" id="7_03yda"]
+[ext_resource type="TileSet" uid="uid://dirjdj6b3m2c8" path="res://Tilesets/debugTileset.tres" id="8_kbkv1"]
+[ext_resource type="PackedScene" uid="uid://bc87sc3p2vx6" path="res://Nodes/Spotter/Spotter.tscn" id="8_tdf5j"]
+[ext_resource type="Texture2D" uid="uid://c7rv10apd2awq" path="res://Nodes/Lights/defaultLight.png" id="9_ko0we"]
+[ext_resource type="Script" path="res://Scenes/TestScene/speen.gd" id="10_3x5j5"]
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kclyl"]
-polygon = PackedVector2Array(31.9366, -27.9285, 31.9366, 25.8597, 30.959, 31.0317, -28.3519, 31.0317, -29.9814, 26.8941, -29.6555, -28.9629, -28.3519, -34.1349, 30.3072, -33.1005)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_errjy"]
-diffuse_texture = ExtResource("1_82ww6")
-normal_texture = ExtResource("3_ie7gv")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mbffw"]
-texture = SubResource("CanvasTexture_errjy")
-texture_region_size = Vector2i(64, 64)
-use_texture_padding = false
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-
-[sub_resource type="TileSet" id="TileSet_e61ry"]
-tile_size = Vector2i(64, 64)
-physics_layer_0/collision_layer = 1
-sources/5 = SubResource("TileSetAtlasSource_mbffw")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1a2l"]
+size = Vector2(576, 324)
 
 [node name="TestScene" type="Node2D"]
+script = ExtResource("1_v3gos")
 
-[node name="ShadowCaster" type="Sprite2D" parent="."]
-z_index = 2
-position = Vector2(605, 353)
-scale = Vector2(3.09419, 1.09356)
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="ShadowCaster"]
-show_behind_parent = true
-scale = Vector2(0.991722, 0.884047)
-occluder = SubResource("OccluderPolygon2D_kclyl")
-
-[node name="Scene" type="Node" parent="."]
+[node name="Scene" type="Node2D" parent="."]
 
 [node name="Background" type="Sprite2D" parent="Scene"]
 modulate = Color(0, 1, 0.811765, 1)
-position = Vector2(569.673, 286.459)
-scale = Vector2(8.09886, 4.14908)
-texture = ExtResource("1_1fvfi")
 
-[node name="DebugTilemap" type="TileMap" parent="Scene"]
-texture_filter = 1
-tile_set = SubResource("TileSet_e61ry")
-rendering_quadrant_size = 64
-format = 2
-layer_0/tile_data = PackedInt32Array(393217, 5, 0, 327681, 5, 0, 262145, 5, 0, 196609, 5, 0, 196608, 5, 0, 262144, 5, 0, 327680, 5, 0, 393216, 5, 0, 458752, 5, 0, 458753, 5, 0, 131072, 5, 0, 131073, 5, 0, 65537, 5, 0, 65536, 5, 0, 0, 5, 0, 524288, 5, 0, 1, 5, 0, 524289, 5, 0, 589824, 5, 0, 589825, 5, 0, 524290, 5, 0, 589826, 5, 0, 524291, 5, 0, 589827, 5, 0, 524292, 5, 0, 589828, 5, 0, 524293, 5, 0, 589829, 5, 0, 524294, 5, 0, 589830, 5, 0, 524295, 5, 0, 589831, 5, 0, 524296, 5, 0, 589832, 5, 0, 524297, 5, 0, 589833, 5, 0, 524298, 5, 0, 589834, 5, 0, 524299, 5, 0, 589835, 5, 0, 524300, 5, 0, 589836, 5, 0, 524301, 5, 0, 589837, 5, 0, 524302, 5, 0, 589838, 5, 0, 524303, 5, 0, 589839, 5, 0, 524304, 5, 0, 589840, 5, 0, 524305, 5, 0, 589841, 5, 0, 16, 5, 0, 65552, 5, 0, 131088, 5, 0, 196624, 5, 0, 262160, 5, 0, 327696, 5, 0, 393232, 5, 0, 458768, 5, 0, 17, 5, 0, 65553, 5, 0, 131089, 5, 0, 196625, 5, 0, 262161, 5, 0, 327697, 5, 0, 393233, 5, 0, 458769, 5, 0, 327690, 5, 0, 327689, 5, 0, 327688, 5, 0)
-
-[node name="Player" parent="Scene" instance=ExtResource("2_i0scs")]
-position = Vector2(459, 403)
-
-[node name="Camera2D" type="Camera2D" parent="Scene"]
-position = Vector2(577, 323)
+position = Vector2(290.841, 160.178)
+scale = Vector2(4.43998, 2.44029)
+texture = ExtResource("1_l6h13")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Scene"]
-stream = ExtResource("5_gahhk")
+stream = ExtResource("4_i4wyr")
 volume_db = -16.0
 autoplay = true
 
 [node name="debugTestCam" type="Node2D" parent="Scene" node_paths=PackedStringArray("smiley", "frowney")]
-position = Vector2(579, 48)
-rotation = -0.72398
-script = ExtResource("6_uubpb")
+position = Vector2(463, 92)
+rotation = -0.0981976
+script = ExtResource("5_k0hi8")
 smiley = NodePath("Smile")
 frowney = NodePath("Frown")
 
 [node name="Smile" type="Sprite2D" parent="Scene/debugTestCam"]
-texture = ExtResource("7_hwhrd")
+texture = ExtResource("6_3x5tp")
 
 [node name="Frown" type="Sprite2D" parent="Scene/debugTestCam"]
 visible = false
-texture = ExtResource("8_wv5qw")
+texture = ExtResource("7_03yda")
 
-[node name="Spotter" parent="Scene/debugTestCam" instance=ExtResource("5_gmojd")]
-rotation = 2.24357
-distance = 658.461
-number_of_rays = 17
-angle = 108.538
+[node name="Spotter" parent="Scene/debugTestCam" instance=ExtResource("8_tdf5j")]
+rotation = 2.00368
+distance = 254.379
+number_of_rays = 10
+angle = 39.558
+
+[node name="SpinningIcon" type="Sprite2D" parent="Scene"]
+position = Vector2(357, 127)
+texture = ExtResource("1_l6h13")
+script = ExtResource("10_3x5j5")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Scene"]
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAAUAAQAAAAAAAAAAAAYAAQAAAAAAAAAAAAcAAQAAAAAAAAAAAAgAAQAAAAAAAAAAAAkAAQAAAAAAAAABAAkAAQAAAAAAAAACAAkAAQAAAAAAAAADAAkAAQAAAAAAAAAEAAkAAQAAAAAAAAAFAAkAAQAAAAAAAAAGAAkAAQAAAAAAAAAHAAkAAQAAAAAAAAAIAAkAAQAAAAAAAAAJAAkAAQAAAAAAAAAKAAkAAQAAAAAAAAALAAkAAQAAAAAAAAAMAAkAAQAAAAAAAAANAAkAAQAAAAAAAAAOAAkAAQAAAAAAAAAPAAkAAQAAAAAAAAAQAAkAAAAAAAAAAAARAAkAAAAAAAAAAAARAAYAAQAAAAAAAAARAAUAAQAAAAAAAAARAAQAAQAAAAAAAAARAAMAAQAAAAAAAAARAAIAAQAAAAAAAAARAAEAAQAAAAAAAAARAAAAAQAAAAAAAAAQAAAAAQAAAAAAAAAPAAAAAQAAAAAAAAAOAAAAAQAAAAAAAAANAAAAAQAAAAAAAAAMAAAAAQAAAAAAAAALAAAAAQAAAAAAAAAKAAAAAQAAAAAAAAAJAAAAAQAAAAAAAAAIAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAAEAAQAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAAAAAAGAAQAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAIAAAAAAAAAAAA=")
+tile_set = ExtResource("8_kbkv1")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.196078, 0.196078, 0.207843, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(586, 49)
+position = Vector2(427, 167)
+scale = Vector2(0.33709, 0.217961)
 color = Color(1, 0.913725, 0.85098, 1)
 shadow_enabled = true
-texture = ExtResource("7_a0dxn")
+texture = ExtResource("9_ko0we")
 texture_scale = 7.15
+
+[node name="RoomDetector" type="Area2D" parent="."]
+process_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomDetector"]
+position = Vector2(288, 160)
+shape = SubResource("RectangleShape2D_j1a2l")
+metadata/_edit_lock_ = true
 
 [connection signal="player_entered" from="Scene/debugTestCam/Spotter" to="Scene/debugTestCam" method="showFrowney"]
 [connection signal="player_exited" from="Scene/debugTestCam/Spotter" to="Scene/debugTestCam" method="showSmiley"]
+[connection signal="body_entered" from="RoomDetector" to="." method="_on_room_detector_body_entered"]
+[connection signal="body_exited" from="RoomDetector" to="." method="_on_room_detector_body_exited"]
