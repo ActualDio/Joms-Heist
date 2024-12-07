@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5d7chfl4u245"]
+
+[ext_resource type="Script" path="res://Scenes/Rooms/roomBase.gd" id="1_pb0e1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syjba"]
+size = Vector2(576, 324)
+
+[node name="TestRoom2" type="Node2D"]
+script = ExtResource("1_pb0e1")
+
+[node name="RoomDetector" type="Area2D" parent="."]
+process_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomDetector"]
+position = Vector2(288, 162)
+shape = SubResource("RectangleShape2D_syjba")
+
+[connection signal="body_entered" from="RoomDetector" to="." method="_on_room_detector_body_entered"]
+[connection signal="body_exited" from="RoomDetector" to="." method="_on_room_detector_body_exited"]
