@@ -1,14 +1,15 @@
-[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://dirjdj6b3m2c8"]
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://dirjdj6b3m2c8"]
 
 [ext_resource type="Texture2D" uid="uid://bsxhi07mbawci" path="res://icon_reallysmol.png" id="1_aptv4"]
 [ext_resource type="Texture2D" uid="uid://m86whkgoqjud" path="res://normal_small.png" id="2_hxs3d"]
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_507rg"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_65iju"]
 polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_71rtc"]
 diffuse_texture = ExtResource("1_aptv4")
 normal_texture = ExtResource("2_hxs3d")
+specular_shininess = 0.3
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v4emu"]
 texture = SubResource("CanvasTexture_71rtc")
@@ -16,8 +17,11 @@ texture_region_size = Vector2i(32, 32)
 use_texture_padding = false
 0:0/next_alternative_id = 2
 0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_507rg")
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_65iju")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kovha"]
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_0fj8n"]
 diffuse_texture = ExtResource("1_aptv4")
@@ -27,6 +31,7 @@ normal_texture = ExtResource("2_hxs3d")
 texture = SubResource("CanvasTexture_0fj8n")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_kovha")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [resource]
