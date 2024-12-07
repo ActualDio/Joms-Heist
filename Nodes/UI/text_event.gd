@@ -44,6 +44,8 @@ func _process(delta: float) -> void:
 			countDown -= delta;
 			if countDown <= 0:
 				textLabel.visible_characters += 1;
+				if textLabel.text[textLabel.visible_characters - 1] != " ":
+					$TextSoundPlayer.play();
 				countDown += delay_between_chars;
 
 func _input(event: InputEvent) -> void:
