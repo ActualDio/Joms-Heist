@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5d7chfl4u245"]
 
-[ext_resource type="Script" path="res://Scenes/defaultRoom/roomBase.gd" id="1_pb0e1"]
+[ext_resource type="Script" path="res://Scenes/Actual Scenes/defaultRoom/roomBase.gd" id="1_pb0e1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syjba"]
 size = Vector2(576, 324)

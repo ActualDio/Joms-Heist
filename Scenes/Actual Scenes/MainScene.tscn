@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://chncjn52kc7b"]
+
+[ext_resource type="Script" path="res://Scenes/RoomManager/RoomManager.gd" id="1_1afyg"]
+[ext_resource type="Script" path="res://Scenes/RoomManager/cool_camera.gd" id="2_ivv0c"]
+[ext_resource type="PackedScene" uid="uid://dakgb3c130kxp" path="res://Nodes/Player/Player.tscn" id="3_n7rup"]
+
+[node name="MainScene" type="Node2D" node_paths=PackedStringArray("player", "camera")]
+script = ExtResource("1_1afyg")
+player = NodePath("Player")
+camera = NodePath("CoolCamera")
+
+[node name="CoolCamera" type="Camera2D" parent="."]
+process_mode = 3
+position = Vector2(575, 190)
+position_smoothing_speed = 6.0
+script = ExtResource("2_ivv0c")
+
+[node name="Player" parent="." instance=ExtResource("3_n7rup")]
+position = Vector2(102, 112)

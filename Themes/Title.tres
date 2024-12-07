@@ -1,0 +1,40 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dp48o28y1j1qr"]
+
+[ext_resource type="FontFile" uid="uid://8xq18w4106x8" path="res://Fonts/Trirong/Trirong-Bold.ttf" id="1_30eh6"]
+[ext_resource type="FontFile" uid="uid://wdb2hsmrbnx4" path="res://Fonts/Trirong/Trirong-ExtraBold.ttf" id="2_ermyr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2lub"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfa7r"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1lqih"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oop3b"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3bts"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0.88, 0.8008, 0.4048, 1)
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 50
+Button/fonts/font = ExtResource("1_30eh6")
+Button/styles/disabled = SubResource("StyleBoxFlat_b2lub")
+Button/styles/focus = SubResource("StyleBoxFlat_dfa7r")
+Button/styles/hover = SubResource("StyleBoxFlat_1lqih")
+Button/styles/normal = SubResource("StyleBoxFlat_oop3b")
+Button/styles/pressed = SubResource("StyleBoxFlat_t3bts")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0.710489, 0.58649, 7.70092e-07, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.14902)
+Label/constants/outline_size = 15
+Label/constants/shadow_offset_x = 17
+Label/constants/shadow_offset_y = 13
+Label/constants/shadow_outline_size = 8
+Label/font_sizes/font_size = 140
+Label/fonts/font = ExtResource("2_ermyr")
