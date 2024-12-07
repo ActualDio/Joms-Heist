@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://Nodes/Player/Player.gd" id="1_0gjy5"]
 [ext_resource type="Texture2D" uid="uid://btla7j6iiot7e" path="res://Nodes/Player/32_placeholderHero2.png" id="2_3mgtt"]
-[ext_resource type="Texture2D" uid="uid://m86whkgoqjud" path="res://normal_small.png" id="3_5gcjt"]
+[ext_resource type="Texture2D" uid="uid://c2qfx1hqcd55d" path="res://Lights/PointLight.png" id="4_wjucq"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_08vmu"]
 diffuse_texture = ExtResource("2_3mgtt")
-normal_texture = ExtResource("3_5gcjt")
-specular_shininess = 0.4
+specular_color = Color(0.753984, 0.753984, 0.753984, 1)
+specular_shininess = 0.08
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2qf8h"]
 size = Vector2(24, 28)
@@ -180,6 +180,12 @@ _data = {
 position = Vector2(299, 299)
 script = ExtResource("1_0gjy5")
 
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -2)
+energy = 0.5
+shadow_enabled = true
+texture = ExtResource("4_wjucq")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 3
 texture_filter = 1
@@ -193,5 +199,3 @@ shape = SubResource("RectangleShape2D_2qf8h")
 libraries = {
 "": SubResource("AnimationLibrary_n28ow")
 }
-
-[node name="PointLight2D" type="PointLight2D" parent="."]

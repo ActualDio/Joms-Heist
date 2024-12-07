@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8f42wsc3qnoi"]
+[gd_scene load_steps=8 format=3 uid="uid://c8f42wsc3qnoi"]
 
 [ext_resource type="Theme" uid="uid://kncue5wmf60t" path="res://Themes/TextBoxTheme.tres" id="1_gjql6"]
 [ext_resource type="Script" path="res://Nodes/UI/text_event.gd" id="1_mlikg"]
-[ext_resource type="Texture2D" uid="uid://7jky4if4e2mw" path="res://Nodes/UI/tempCodecBG.png" id="2_01rec"]
 [ext_resource type="Theme" uid="uid://d3jmr5vwxye1k" path="res://Themes/CharacterNameTheme.tres" id="2_6lb7v"]
 
 [sub_resource type="Animation" id="Animation_dsp1n"]
@@ -12,7 +11,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Static:modulate")
+tracks/0/path = NodePath("Darkener:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -53,7 +52,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Static:modulate")
+tracks/0/path = NodePath("Darkener:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -92,7 +91,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Static:modulate")
+tracks/0/path = NodePath("Darkener:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -147,8 +146,7 @@ This is some test dialog!
 I'm not sure if it will work right...
 This sentence is gonna be really really long on purpose, look how long it is!"
 
-[node name="Static" type="TextureRect" parent="."]
-visible = false
+[node name="Darkener" type="ColorRect" parent="."]
 modulate = Color(0.585062, 0.585062, 0.585062, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -156,7 +154,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_01rec")
+color = Color(0, 0, 0, 0.4)
 
 [node name="Textbox" type="Control" parent="."]
 layout_mode = 1
@@ -195,8 +193,6 @@ anchor_left = 0.5
 anchor_top = 0.095
 anchor_right = 0.5
 anchor_bottom = 0.095
-offset_top = -101.56
-offset_bottom = -101.56
 theme = ExtResource("2_6lb7v")
 
 [node name="Label" type="Label" parent="CharacterTitle"]
