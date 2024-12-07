@@ -25,7 +25,6 @@ position = Vector2(576, 0)
 size = Vector2(576, 324)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.196078, 0.196078, 0.207843, 1)
 
 [node name="Player" parent="." instance=ExtResource("4_oyt8d")]
