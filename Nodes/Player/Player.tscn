@@ -177,7 +177,6 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(299, 299)
 script = ExtResource("1_0gjy5")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]

@@ -33,7 +33,7 @@ size = Vector2(576, 324)
 color = Color(0.196078, 0.196078, 0.207843, 1)
 
 [node name="Player" parent="." instance=ExtResource("4_oyt8d")]
-position = Vector2(229, 189)
+position = Vector2(73, 269)
 
 [node name="BigRoom" parent="." instance=ExtResource("6_h0c7g")]
 position = Vector2(-64, 320)
