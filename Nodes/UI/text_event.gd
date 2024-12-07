@@ -1,5 +1,7 @@
 extends Control
 
+signal finished
+
 @export_multiline var dialog : String;
 
 @export_range(0.01,0.15) var delay_between_chars : float = 0.04;
@@ -24,7 +26,8 @@ func _ready() -> void:
 		currentLine += 1;
 	hide();
 
-func beginEvent():
+func beginEvent(_unused = null):
+	print("Twice!")
 	if !started:
 		started = true;
 		get_tree().paused = true;
@@ -44,12 +47,13 @@ func _process(delta: float) -> void:
 				countDown += delay_between_chars;
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("TextAdvance"):
 		if active:
 			if textLabel.visible_characters == textLabel.get_total_character_count():
 				currentLine += 1;
 				if currentLine >= dialogArray.size():
 					$AnimationPlayer.play("Out");
+					active = false;
 				else:
 					updateText();
 			else:
@@ -66,6 +70,7 @@ func _on_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "Out":
 		get_tree().paused = false;
 		hide();
+		emit_signal("finished");
 		currentLine = 0;
 		started = false;
 		if dialogArray[0].begins_with(">"): #if the first line denotes a character... (this should usually be the case)

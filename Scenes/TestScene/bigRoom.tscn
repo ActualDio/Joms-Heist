@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=4 uid="uid://dpl46krmwle4w"]
+[gd_scene load_steps=8 format=4 uid="uid://dpl46krmwle4w"]
 
 [ext_resource type="Script" path="res://Scenes/defaultRoom/roomBase.gd" id="1_r0sec"]
 [ext_resource type="TileSet" uid="uid://dirjdj6b3m2c8" path="res://Tilesets/debugTileset.tres" id="2_gv7xt"]
 [ext_resource type="Texture2D" uid="uid://8mv8u03102yd" path="res://icon.svg" id="2_khn4w"]
+[ext_resource type="Texture2D" uid="uid://8khaghg0gaa2" path="res://Lights/Spotlight.png" id="4_adgrn"]
+[ext_resource type="PackedScene" uid="uid://b2vkai83legmh" path="res://Nodes/Radio/Radio.tscn" id="5_xxyq1"]
+[ext_resource type="PackedScene" uid="uid://c8f42wsc3qnoi" path="res://Nodes/UI/TextEvent.tscn" id="6_lxku7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syjba"]
 size = Vector2(896, 320)
@@ -15,6 +18,7 @@ cameraZoom = 1.29
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0, 1, 0.811765, 1)
+z_index = -2
 position = Vector2(450.341, 160.178)
 scale = Vector2(6.93217, 2.44029)
 texture = ExtResource("2_khn4w")
@@ -32,5 +36,36 @@ metadata/_edit_lock_ = true
 position = Vector2(448, 160)
 shape = SubResource("RectangleShape2D_syjba")
 
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(38, 40)
+rotation = -2.51764
+scale = Vector2(1, 1.25443)
+texture = ExtResource("4_adgrn")
+offset = Vector2(-289.405, 0)
+
+[node name="Radio" parent="." instance=ExtResource("5_xxyq1")]
+position = Vector2(752, 273)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextEvent" parent="CanvasLayer" instance=ExtResource("6_lxku7")]
+dialog = ">P-chan
+Gunnar Gunnarson?
+>J
+Ja?
+>P-chan
+There has been annother murder
+>J
+I already know...
+The victim...
+Was my son.
+>P-Chan
+You don't sound very upset...
+>J
+We were not close."
+
 [connection signal="body_entered" from="RoomDetector" to="." method="_on_room_detector_body_entered"]
 [connection signal="body_exited" from="RoomDetector" to="." method="_on_room_detector_body_exited"]
+[connection signal="interacted" from="Radio" to="." method="_on_radio_interacted"]
+[connection signal="interacted" from="Radio" to="CanvasLayer/TextEvent" method="beginEvent"]
+[connection signal="finished" from="CanvasLayer/TextEvent" to="." method="_on_text_event_finished"]

@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=4 uid="uid://do5c2yuje28lm"]
+[gd_scene load_steps=12 format=4 uid="uid://do5c2yuje28lm"]
 
 [ext_resource type="Texture2D" uid="uid://8mv8u03102yd" path="res://icon.svg" id="1_l6h13"]
 [ext_resource type="Script" path="res://Scenes/defaultRoom/roomBase.gd" id="1_v3gos"]
-[ext_resource type="AudioStream" uid="uid://d0dov2rbdpoi3" path="res://music/Heist Theme_1.wav" id="4_i4wyr"]
 [ext_resource type="Texture2D" uid="uid://8khaghg0gaa2" path="res://Lights/Spotlight.png" id="5_32kd4"]
 [ext_resource type="Script" path="res://Scenes/TestScene/debugTestCam.gd" id="5_k0hi8"]
 [ext_resource type="Texture2D" uid="uid://bps6dsh46hwcy" path="res://Nodes/Spotter/debugSmiley.png" id="6_3x5tp"]
@@ -19,6 +18,15 @@ size = Vector2(576, 324)
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_v3gos")
 
+[node name="Spotlight" type="PointLight2D" parent="."]
+texture_filter = 1
+position = Vector2(33, 34)
+rotation = -2.54805
+energy = 0.48
+shadow_enabled = true
+texture = ExtResource("5_32kd4")
+offset = Vector2(-287.82, 0)
+
 [node name="Scene" type="Node2D" parent="."]
 
 [node name="Background" type="Sprite2D" parent="Scene"]
@@ -27,11 +35,6 @@ position = Vector2(290.841, 160.178)
 scale = Vector2(4.43998, 2.44029)
 texture = ExtResource("1_l6h13")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Scene"]
-stream = ExtResource("4_i4wyr")
-volume_db = -16.0
-autoplay = true
-
 [node name="debugTestCam" type="Node2D" parent="Scene" node_paths=PackedStringArray("smiley", "frowney")]
 position = Vector2(477, 111)
 rotation = 2.3563
@@ -39,9 +42,10 @@ script = ExtResource("5_k0hi8")
 smiley = NodePath("Smile")
 frowney = NodePath("Frown")
 
-[node name="PointLight2D" type="PointLight2D" parent="Scene/debugTestCam"]
+[node name="Spotlight2" type="PointLight2D" parent="Scene/debugTestCam"]
 texture_filter = 1
-rotation = 3.14159
+rotation = 3.14098
+energy = 1.15
 shadow_enabled = true
 texture = ExtResource("5_32kd4")
 offset = Vector2(-145.365, 0)
@@ -60,13 +64,13 @@ number_of_rays = 10
 angle = 45.0
 
 [node name="SpinningIcon" type="Sprite2D" parent="Scene"]
-position = Vector2(357, 127)
+position = Vector2(286, 141)
 texture = ExtResource("1_l6h13")
 script = ExtResource("10_3x5j5")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Scene"]
 material = SubResource("CanvasItemMaterial_mtow6")
-tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAAUAAQAAAAAAAAAAAAYAAQAAAAAAAAAAAAcAAQAAAAAAAAAAAAgAAQAAAAAAAAAAAAkAAQAAAAAAAAABAAkAAQAAAAAAAAACAAkAAQAAAAAAAAADAAkAAQAAAAAAAAAEAAkAAQAAAAAAAAAFAAkAAQAAAAAAAAAGAAkAAQAAAAAAAAAHAAkAAQAAAAAAAAAIAAkAAQAAAAAAAAAJAAkAAQAAAAAAAAAKAAkAAQAAAAAAAAALAAkAAQAAAAAAAAAMAAkAAQAAAAAAAAANAAkAAQAAAAAAAAAOAAkAAQAAAAAAAAAPAAkAAQAAAAAAAAAQAAkAAAAAAAAAAAARAAkAAAAAAAAAAAARAAYAAQAAAAAAAAARAAUAAQAAAAAAAAARAAQAAQAAAAAAAAARAAMAAQAAAAAAAAARAAIAAQAAAAAAAAARAAEAAQAAAAAAAAARAAAAAQAAAAAAAAAQAAAAAQAAAAAAAAAPAAAAAQAAAAAAAAAOAAAAAQAAAAAAAAANAAAAAQAAAAAAAAAMAAAAAQAAAAAAAAALAAAAAQAAAAAAAAAKAAAAAQAAAAAAAAAJAAAAAQAAAAAAAAAIAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAAEAAQAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAAAAAAGAAQAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAIAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAAUAAQAAAAAAAAAAAAYAAQAAAAAAAAAAAAcAAQAAAAAAAAAAAAgAAQAAAAAAAAAAAAkAAQAAAAAAAAABAAkAAQAAAAAAAAACAAkAAQAAAAAAAAADAAkAAQAAAAAAAAAEAAkAAQAAAAAAAAAFAAkAAQAAAAAAAAAGAAkAAQAAAAAAAAAHAAkAAQAAAAAAAAAIAAkAAQAAAAAAAAAJAAkAAQAAAAAAAAAKAAkAAQAAAAAAAAALAAkAAQAAAAAAAAAMAAkAAQAAAAAAAAANAAkAAQAAAAAAAAAOAAkAAQAAAAAAAAAPAAkAAQAAAAAAAAAQAAkAAAAAAAAAAAARAAkAAAAAAAAAAAARAAYAAQAAAAAAAAARAAUAAQAAAAAAAAARAAQAAQAAAAAAAAARAAMAAQAAAAAAAAARAAIAAQAAAAAAAAARAAEAAQAAAAAAAAARAAAAAQAAAAAAAAAQAAAAAQAAAAAAAAAPAAAAAQAAAAAAAAAOAAAAAQAAAAAAAAANAAAAAQAAAAAAAAAMAAAAAQAAAAAAAAALAAAAAQAAAAAAAAAKAAAAAQAAAAAAAAAJAAAAAQAAAAAAAAAIAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAAFAAUAAAAAAAAAAAA=")
 tile_set = ExtResource("8_kbkv1")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]

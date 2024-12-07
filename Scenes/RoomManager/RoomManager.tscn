@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bh0c4xaaceexu"]
+[gd_scene load_steps=8 format=3 uid="uid://bh0c4xaaceexu"]
 
 [ext_resource type="Script" path="res://Scenes/RoomManager/RoomManager.gd" id="1_2vi5l"]
 [ext_resource type="Script" path="res://Scenes/RoomManager/cool_camera.gd" id="2_xkgqa"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://by64oaxfdx54t" path="res://Scenes/TestScene/TestRoom2.tscn" id="3_x8lut"]
 [ext_resource type="PackedScene" uid="uid://dakgb3c130kxp" path="res://Nodes/Player/Player.tscn" id="4_oyt8d"]
 [ext_resource type="PackedScene" uid="uid://dpl46krmwle4w" path="res://Scenes/TestScene/bigRoom.tscn" id="6_h0c7g"]
+[ext_resource type="AudioStream" uid="uid://d0dov2rbdpoi3" path="res://music/Heist Theme_1.wav" id="7_p8ywq"]
 
 [node name="RoomManager" type="Node2D" node_paths=PackedStringArray("player", "camera")]
 script = ExtResource("1_2vi5l")
@@ -13,6 +14,7 @@ player = NodePath("Player")
 camera = NodePath("CoolCamera")
 
 [node name="CoolCamera" type="Camera2D" parent="."]
+process_mode = 3
 position = Vector2(575, 190)
 position_smoothing_speed = 6.0
 script = ExtResource("2_xkgqa")
@@ -30,5 +32,10 @@ color = Color(0.196078, 0.196078, 0.207843, 1)
 [node name="Player" parent="." instance=ExtResource("4_oyt8d")]
 position = Vector2(229, 189)
 
-[node name="TestRoom3" parent="." instance=ExtResource("6_h0c7g")]
+[node name="BigRoom" parent="." instance=ExtResource("6_h0c7g")]
 position = Vector2(-64, 320)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_p8ywq")
+volume_db = -16.0
+autoplay = true
