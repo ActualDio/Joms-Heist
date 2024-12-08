@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://by64oaxfdx54t"]
 
-[ext_resource type="Script" path="res://Scenes/defaultRoom/roomBase.gd" id="1_cnuys"]
+[ext_resource type="Script" path="res://Scenes/Actual Scenes/defaultRoom/roomBase.gd" id="1_cnuys"]
 [ext_resource type="Texture2D" uid="uid://8mv8u03102yd" path="res://icon.svg" id="2_k8hmc"]
 [ext_resource type="TileSet" uid="uid://dirjdj6b3m2c8" path="res://Tilesets/debugTileset.tres" id="2_seuyy"]
 [ext_resource type="Script" path="res://Scenes/TestScene/speen.gd" id="3_xxild"]

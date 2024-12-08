@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=4 uid="uid://do5c2yuje28lm"]
 
 [ext_resource type="Texture2D" uid="uid://8mv8u03102yd" path="res://icon.svg" id="1_l6h13"]
-[ext_resource type="Script" path="res://Scenes/defaultRoom/roomBase.gd" id="1_v3gos"]
+[ext_resource type="Script" path="res://Scenes/Actual Scenes/defaultRoom/roomBase.gd" id="1_v3gos"]
 [ext_resource type="Texture2D" uid="uid://8khaghg0gaa2" path="res://Lights/Spotlight.png" id="5_32kd4"]
 [ext_resource type="Script" path="res://Scenes/TestScene/debugTestCam.gd" id="5_k0hi8"]
 [ext_resource type="Texture2D" uid="uid://bps6dsh46hwcy" path="res://Nodes/Spotter/debugSmiley.png" id="6_3x5tp"]

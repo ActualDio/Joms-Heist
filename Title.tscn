@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxg8imu06y8ou"]
+
+[ext_resource type="Theme" uid="uid://dp48o28y1j1qr" path="res://Themes/Title.tres" id="1_j5kjk"]
+[ext_resource type="PackedScene" uid="uid://b2gj6kyfydonn" path="res://Nodes/UI/SpeedrunTimer.tscn" id="2_4jkkf"]
+[ext_resource type="Script" path="res://title.gd" id="2_vwnys"]
+
+[node name="Title" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_j5kjk")
+script = ExtResource("2_vwnys")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "The Heist"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.544
+anchor_right = 0.65
+anchor_bottom = 0.624
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.703
+anchor_right = 0.65
+anchor_bottom = 0.703
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 31
+toggle_mode = true
+text = "Speedrun Timer"
+
+[node name="SpeedrunTimer" parent="." instance=ExtResource("2_4jkkf")]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.98
+anchor_right = 0.98
+anchor_bottom = 0.0
+offset_left = -239.0
+offset_bottom = 70.0
+grow_horizontal = 0
+grow_vertical = 1
+theme_override_font_sizes/font_size = 40
+
+[connection signal="pressed" from="Button" to="." method="gameStart"]
+[connection signal="pressed" from="Button" to="SpeedrunTimer" method="start"]
+[connection signal="toggled" from="Button2" to="SpeedrunTimer" method="_on_button_toggled"]

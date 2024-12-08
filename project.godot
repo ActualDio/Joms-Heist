@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Joms Heist"
-run/main_scene="res://Scenes/RoomManager/RoomManager.tscn"
+run/main_scene="res://Scenes/Actual Scenes/MainScene.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+MusicSyncer="*res://Music/music_syncer.gd"
 
 [display]
 
@@ -61,3 +65,4 @@ TextAdvance={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.0500341, 0.0688154, 0.106408, 1)
