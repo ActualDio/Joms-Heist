@@ -27,6 +27,7 @@ position = Vector2(127, 120)
 metadata/_edit_lock_ = true
 
 [node name="MusicPlayer" parent="." instance=ExtResource("5_xyjsi")]
+process_mode = 3
 stream = ExtResource("5_f17oq")
 volume_db = -10.343
 
