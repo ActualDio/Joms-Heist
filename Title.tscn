@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxg8imu06y8ou"]
+[gd_scene load_steps=4 format=3 uid="uid://bxg8imu06y8ou"]
 
 [ext_resource type="Theme" uid="uid://dp48o28y1j1qr" path="res://Themes/Title.tres" id="1_j5kjk"]
 [ext_resource type="PackedScene" uid="uid://b2gj6kyfydonn" path="res://Nodes/UI/SpeedrunTimer.tscn" id="2_4jkkf"]
+[ext_resource type="Script" path="res://title.gd" id="2_vwnys"]
 
 [node name="Title" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,6 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_j5kjk")
+script = ExtResource("2_vwnys")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -60,5 +63,6 @@ grow_horizontal = 0
 grow_vertical = 1
 theme_override_font_sizes/font_size = 40
 
+[connection signal="pressed" from="Button" to="." method="gameStart"]
 [connection signal="pressed" from="Button" to="SpeedrunTimer" method="start"]
 [connection signal="toggled" from="Button2" to="SpeedrunTimer" method="_on_button_toggled"]

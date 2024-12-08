@@ -930,6 +930,6 @@ terrain_set_0/terrain_1/color = Color(0.852292, 0.872947, 0.885968, 1)
 sources/0 = SubResource("TileSetAtlasSource_lp18y")
 sources/1 = SubResource("TileSetAtlasSource_4qrjp")
 
-[node name="TileSet" type="TileMapLayer"]
+[node name="TileMap" type="TileMapLayer"]
 light_mask = 2
 tile_set = SubResource("TileSet_naa8e")

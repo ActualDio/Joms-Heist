@@ -2,12 +2,22 @@ extends CharacterBody2D
 class_name Player #This way it'll be a lot easier to tell if something is a player
 
 const SPEED = 250.0
-const JUMP_VELOCITY = -500.0
+const JUMP_VELOCITY = -450.0
 
 var crouching = false;
 
+var respawnPoint : Vector2 = Vector2(120,120);
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+func _ready() -> void:
+	hide();
+	process_mode = ProcessMode.PROCESS_MODE_DISABLED;
+	
+func spawnPlayer():
+	show();
+	process_mode = ProcessMode.PROCESS_MODE_INHERIT;
 
 func _input(event):
 	if event.is_action_pressed("crouch"):

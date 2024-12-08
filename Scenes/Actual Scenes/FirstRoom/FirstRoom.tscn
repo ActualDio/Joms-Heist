@@ -1,15 +1,30 @@
-[gd_scene load_steps=8 format=4 uid="uid://ds4pqty2ln7sg"]
+[gd_scene load_steps=17 format=4 uid="uid://ds4pqty2ln7sg"]
 
 [ext_resource type="Script" path="res://Scenes/Actual Scenes/defaultRoom/roomBase.gd" id="1_5mkmh"]
 [ext_resource type="PackedScene" uid="uid://btx2qw3isgxaw" path="res://Tilesets/IndoorTileMap.tscn" id="2_f3vgl"]
 [ext_resource type="Texture2D" uid="uid://dqhanmg7l228h" path="res://Tilesets/walltiles.png" id="2_ln7le"]
 [ext_resource type="PackedScene" uid="uid://bxg8imu06y8ou" path="res://Title.tscn" id="2_wb8a4"]
+[ext_resource type="Texture2D" uid="uid://c7clcbeyildj3" path="res://Tilesets/Tilenormal.png" id="3_hfbjs"]
+[ext_resource type="Texture2D" uid="uid://dtclttm7ycjfu" path="res://Tilesets/tileSpecular.png" id="4_6i4xc"]
+[ext_resource type="Texture2D" uid="uid://cnxq4xh28ltd0" path="res://Lights/hangingLamp.png" id="7_qrnek"]
+[ext_resource type="Texture2D" uid="uid://ca3i8gco6pm8k" path="res://Lights/LessWide.png" id="8_1vuva"]
+[ext_resource type="Texture2D" uid="uid://bcvus1os5yni5" path="res://Lights/Wide.png" id="9_r0ccv"]
+[ext_resource type="Texture2D" uid="uid://c65q4rr5wkyw7" path="res://Nodes/Player/heroRepelling.png" id="10_tpxja"]
+[ext_resource type="Script" path="res://Scenes/Actual Scenes/FirstRoom/hero_repelling.gd" id="11_1e7ad"]
+[ext_resource type="Texture2D" uid="uid://btl088wwqfee0" path="res://Nodes/Player/rope.png" id="12_fp5k4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syjba"]
 size = Vector2(576, 320)
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_2dmef"]
+diffuse_texture = ExtResource("2_ln7le")
+normal_texture = ExtResource("3_hfbjs")
+specular_texture = ExtResource("4_6i4xc")
+specular_color = Color(0.687215, 0.687215, 0.687215, 1)
+specular_shininess = 0.23
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2a1nr"]
-texture = ExtResource("2_ln7le")
+texture = SubResource("CanvasTexture_2dmef")
 texture_region_size = Vector2i(32, 32)
 9:3/0 = 0
 
@@ -31,7 +46,7 @@ position = Vector2(288, 160)
 shape = SubResource("RectangleShape2D_syjba")
 
 [node name="BG" type="TileMapLayer" parent="."]
-modulate = Color(0.489622, 0.489622, 0.489622, 1)
+modulate = Color(0.5394, 0.55158, 0.58, 1)
 z_index = -2
 tile_map_data = PackedByteArray("AAAAAAAAAQAJAAMAAAABAAAAAQAJAAMAAAACAAAAAQAJAAMAAAADAAAAAQAJAAMAAAAEAAAAAQAJAAMAAAAFAAAAAQAJAAMAAAAGAAAAAQAJAAMAAAAHAAAAAQAJAAMAAAAIAAAAAQAJAAMAAAAJAAAAAQAJAAMAAAAKAAAAAQAJAAMAAAALAAAAAQAJAAMAAAAMAAAAAQAJAAMAAAANAAAAAQAJAAMAAAAOAAAAAQAJAAMAAAAPAAAAAQAJAAMAAAAQAAAAAQAJAAMAAAARAAAAAQAJAAMAAAARAAEAAQAJAAMAAAAQAAEAAQAJAAMAAAAPAAEAAQAJAAMAAAAOAAEAAQAJAAMAAAANAAEAAQAJAAMAAAAMAAEAAQAJAAMAAAALAAEAAQAJAAMAAAAKAAEAAQAJAAMAAAAJAAEAAQAJAAMAAAAIAAEAAQAJAAMAAAAHAAEAAQAJAAMAAAAGAAEAAQAJAAMAAAAFAAEAAQAJAAMAAAAEAAEAAQAJAAMAAAADAAEAAQAJAAMAAAACAAEAAQAJAAMAAAABAAEAAQAJAAMAAAAAAAEAAQAJAAMAAAAAAAIAAQAJAAMAAAABAAIAAQAJAAMAAAACAAIAAQAJAAMAAAADAAIAAQAJAAMAAAAEAAIAAQAJAAMAAAAFAAIAAQAJAAMAAAAGAAIAAQAJAAMAAAAHAAIAAQAJAAMAAAAIAAIAAQAJAAMAAAAJAAIAAQAJAAMAAAAKAAIAAQAJAAMAAAALAAIAAQAJAAMAAAAMAAIAAQAJAAMAAAANAAIAAQAJAAMAAAANAAMAAQAJAAMAAAAOAAMAAQAJAAMAAAAPAAMAAQAJAAMAAAAQAAMAAQAJAAMAAAARAAMAAQAJAAMAAAARAAIAAQAJAAMAAAAQAAIAAQAJAAMAAAAPAAIAAQAJAAMAAAAOAAIAAQAJAAMAAAALAAMAAQAJAAMAAAAKAAMAAQAJAAMAAAAJAAMAAQAJAAMAAAAIAAMAAQAJAAMAAAAHAAMAAQAJAAMAAAAGAAMAAQAJAAMAAAAFAAMAAQAJAAMAAAAEAAMAAQAJAAMAAAADAAMAAQAJAAMAAAACAAMAAQAJAAMAAAABAAMAAQAJAAMAAAAAAAMAAQAJAAMAAAABAAQAAQAJAAMAAAACAAQAAQAJAAMAAAADAAQAAQAJAAMAAAAEAAQAAQAJAAMAAAAFAAQAAQAJAAMAAAAGAAQAAQAJAAMAAAAHAAQAAQAJAAMAAAAMAAMAAQAJAAMAAAAMAAQAAQAJAAMAAAANAAQAAQAJAAMAAAAOAAQAAQAJAAMAAAAPAAQAAQAJAAMAAAAQAAQAAQAJAAMAAAARAAQAAQAJAAMAAAALAAQAAQAJAAMAAAAKAAQAAQAJAAMAAAAJAAQAAQAJAAMAAAAIAAQAAQAJAAMAAAAAAAQAAQAJAAMAAAAAAAUAAQAJAAMAAAABAAUAAQAJAAMAAAACAAUAAQAJAAMAAAADAAUAAQAJAAMAAAAEAAUAAQAJAAMAAAAFAAUAAQAJAAMAAAAGAAUAAQAJAAMAAAAHAAUAAQAJAAMAAAAIAAUAAQAJAAMAAAAJAAUAAQAJAAMAAAAKAAUAAQAJAAMAAAALAAUAAQAJAAMAAAAMAAUAAQAJAAMAAAANAAUAAQAJAAMAAAAOAAUAAQAJAAMAAAAPAAUAAQAJAAMAAAAQAAUAAQAJAAMAAAARAAUAAQAJAAMAAAARAAYAAQAJAAMAAAARAAcAAQAJAAMAAAARAAgAAQAJAAMAAAARAAkAAQAJAAMAAAAQAAkAAQAJAAMAAAAPAAkAAQAJAAMAAAAOAAkAAQAJAAMAAAANAAkAAQAJAAMAAAAMAAkAAQAJAAMAAAALAAkAAQAJAAMAAAAKAAkAAQAJAAMAAAAJAAkAAQAJAAMAAAAIAAkAAQAJAAMAAAAHAAkAAQAJAAMAAAAGAAkAAQAJAAMAAAAFAAkAAQAJAAMAAAAEAAkAAQAJAAMAAAADAAkAAQAJAAMAAAACAAkAAQAJAAMAAAABAAkAAQAJAAMAAAAAAAkAAQAJAAMAAAAAAAgAAQAJAAMAAAABAAgAAQAJAAMAAAACAAgAAQAJAAMAAAADAAgAAQAJAAMAAAAEAAgAAQAJAAMAAAAFAAgAAQAJAAMAAAAGAAgAAQAJAAMAAAAHAAgAAQAJAAMAAAAIAAgAAQAJAAMAAAAJAAgAAQAJAAMAAAAKAAgAAQAJAAMAAAALAAgAAQAJAAMAAAAMAAgAAQAJAAMAAAANAAgAAQAJAAMAAAAOAAgAAQAJAAMAAAAPAAgAAQAJAAMAAAAQAAgAAQAJAAMAAAAQAAcAAQAJAAMAAAAPAAcAAQAJAAMAAAAOAAcAAQAJAAMAAAANAAcAAQAJAAMAAAAMAAcAAQAJAAMAAAALAAcAAQAJAAMAAAAKAAcAAQAJAAMAAAAJAAcAAQAJAAMAAAAIAAcAAQAJAAMAAAAHAAcAAQAJAAMAAAAGAAcAAQAJAAMAAAAFAAcAAQAJAAMAAAAEAAcAAQAJAAMAAAADAAcAAQAJAAMAAAACAAcAAQAJAAMAAAABAAcAAQAJAAMAAAAAAAcAAQAJAAMAAAAAAAYAAQAJAAMAAAABAAYAAQAJAAMAAAACAAYAAQAJAAMAAAADAAYAAQAJAAMAAAAEAAYAAQAJAAMAAAAFAAYAAQAJAAMAAAAGAAYAAQAJAAMAAAAHAAYAAQAJAAMAAAAIAAYAAQAJAAMAAAAJAAYAAQAJAAMAAAAKAAYAAQAJAAMAAAAQAAYAAQAJAAMAAAAPAAYAAQAJAAMAAAAOAAYAAQAJAAMAAAANAAYAAQAJAAMAAAAMAAYAAQAJAAMAAAALAAYAAQAJAAMAAAA=")
 tile_set = SubResource("TileSet_3xtrb")
@@ -43,7 +58,51 @@ metadata/_edit_lock_ = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Title" parent="CanvasLayer" instance=ExtResource("2_wb8a4")]
-visible = false
+
+[node name="HangingLamp" type="Sprite2D" parent="."]
+position = Vector2(364, 81)
+texture = ExtResource("7_qrnek")
+
+[node name="PointLight2D" type="PointLight2D" parent="HangingLamp"]
+position = Vector2(0, 13)
+energy = 0.47
+shadow_enabled = true
+texture = ExtResource("8_1vuva")
+offset = Vector2(0, 159.675)
+
+[node name="PointLight2D2" type="PointLight2D" parent="HangingLamp/PointLight2D"]
+range_item_cull_mask = 2
+texture = ExtResource("8_1vuva")
+offset = Vector2(0, 159.675)
+metadata/_edit_lock_ = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.333836, 0.34078, 0.453577, 1)
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(134, -119)
+color = Color(0.46, 0.676, 1, 1)
+energy = 0.47
+shadow_enabled = true
+texture = ExtResource("9_r0ccv")
+offset = Vector2(0, 159.675)
+
+[node name="PointLight2D2" type="PointLight2D" parent="PointLight2D2"]
+range_item_cull_mask = 2
+texture = ExtResource("8_1vuva")
+offset = Vector2(0, 159.675)
+metadata/_edit_lock_ = true
+
+[node name="HeroRepelling" type="Sprite2D" parent="."]
+position = Vector2(127, -40)
+texture = ExtResource("10_tpxja")
+script = ExtResource("11_1e7ad")
+
+[node name="Rope" type="Sprite2D" parent="HeroRepelling"]
+position = Vector2(0, -82)
+texture = ExtResource("12_fp5k4")
 
 [connection signal="body_entered" from="RoomDetector" to="." method="_on_room_detector_body_entered"]
 [connection signal="body_exited" from="RoomDetector" to="." method="_on_room_detector_body_exited"]
+[connection signal="game_start" from="CanvasLayer/Title" to="HeroRepelling" method="begin"]
+[connection signal="finished" from="HeroRepelling" to="." method="_on_hero_repelling_finished"]

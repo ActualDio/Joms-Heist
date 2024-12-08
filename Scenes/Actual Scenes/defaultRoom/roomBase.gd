@@ -73,3 +73,10 @@ func _on_text_event_finished() -> void: #Connect this to ur text events
 	cameraZoom = cameraZoomPerma;
 	cameraPos = cameraPosPerma;
 	emit_signal("cameraUpdate");
+
+
+func _on_hero_repelling_finished() -> void: #ONLY CALLED WHEN STARTING THE GAME
+	var p = get_parent();
+	if p is RoomManager:
+		p.player.spawnPlayer();
+		MusicSyncer.start_music();
