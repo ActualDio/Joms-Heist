@@ -23,14 +23,14 @@ specular_texture = ExtResource("4_6i4xc")
 specular_color = Color(0.687215, 0.687215, 0.687215, 1)
 specular_shininess = 0.23
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2a1nr"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_neoq2"]
 texture = SubResource("CanvasTexture_2dmef")
 texture_region_size = Vector2i(32, 32)
 9:3/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_3xtrb"]
 tile_size = Vector2i(32, 32)
-sources/1 = SubResource("TileSetAtlasSource_2a1nr")
+sources/1 = SubResource("TileSetAtlasSource_neoq2")
 
 [node name="TestRoom2" type="Node2D"]
 z_as_relative = false
