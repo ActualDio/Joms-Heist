@@ -30,7 +30,7 @@ metadata/_edit_lock_ = true
 [node name="MusicPlayer" parent="." instance=ExtResource("5_xyjsi")]
 process_mode = 3
 stream = ExtResource("5_f17oq")
-volume_db = -10.343
+volume_db = -16.803
 
 [node name="TestRoom2" parent="." instance=ExtResource("7_5n0cx")]
 position = Vector2(576, 0)

@@ -17,7 +17,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		$Y.show();
 		active = true;
-		body.respawnPoint = position;
+		body.respawnPoint = global_position;
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:

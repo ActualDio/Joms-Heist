@@ -1,7 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dakgb3c130kxp"]
+[gd_scene load_steps=16 format=3 uid="uid://dakgb3c130kxp"]
 
 [ext_resource type="Script" path="res://Nodes/Player/Player.gd" id="1_0gjy5"]
 [ext_resource type="Texture2D" uid="uid://btla7j6iiot7e" path="res://Nodes/Player/32_placeholderHero2.png" id="2_3mgtt"]
+[ext_resource type="Theme" uid="uid://cy6cin16y5237" path="res://Themes/gameOver.tres" id="4_228a8"]
+[ext_resource type="Texture2D" uid="uid://coehknbvkda2e" path="res://Nodes/Player/playerCaught.png" id="4_k1rir"]
 [ext_resource type="Texture2D" uid="uid://c2qfx1hqcd55d" path="res://Lights/PointLight.png" id="4_wjucq"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_08vmu"]
@@ -92,6 +94,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_08vmu")]
+}
 
 [sub_resource type="Animation" id="Animation_o4wx3"]
 resource_name = "default"
@@ -106,6 +120,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_3mgtt")]
 }
 
 [sub_resource type="Animation" id="Animation_ytyls"]
@@ -166,8 +192,24 @@ tracks/1/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_x1s12"]
+resource_name = "Caught"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_k1rir")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n28ow"]
 _data = {
+"Caught": SubResource("Animation_x1s12"),
 "Jump_Left": SubResource("Animation_cieli"),
 "Jump_Right": SubResource("Animation_lxelt"),
 "RESET": SubResource("Animation_1223q"),
@@ -207,3 +249,35 @@ libraries = {
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 position = Vector2(19, -21)
 current = true
+
+[node name="CaughtText" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Label" type="Label" parent="CaughtText"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 115.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_228a8")
+theme_override_colors/font_color = Color(0.81, 0.0729, 0.0729, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "You Were Caught!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CaughtText"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 115.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_228a8")
+theme_override_font_sizes/font_size = 36
+text = "Press the R key or Y button to try again"
+horizontal_alignment = 1
+vertical_alignment = 1
