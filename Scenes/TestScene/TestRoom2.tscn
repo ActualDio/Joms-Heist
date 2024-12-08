@@ -38,7 +38,7 @@ shape = SubResource("RectangleShape2D_ht8y4")
 metadata/_edit_lock_ = true
 
 [node name="Guard" parent="." instance=ExtResource("5_viu08")]
-position = Vector2(419, 175)
+position = Vector2(179, 255)
 
 [connection signal="body_entered" from="RoomDetector" to="." method="_on_room_detector_body_entered"]
 [connection signal="body_exited" from="RoomDetector" to="." method="_on_room_detector_body_exited"]

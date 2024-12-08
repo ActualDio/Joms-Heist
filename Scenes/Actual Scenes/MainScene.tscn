@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://chncjn52kc7b"]
+[gd_scene load_steps=9 format=3 uid="uid://chncjn52kc7b"]
 
 [ext_resource type="Script" path="res://Scenes/RoomManager/RoomManager.gd" id="1_1afyg"]
 [ext_resource type="Script" path="res://Scenes/RoomManager/cool_camera.gd" id="2_ivv0c"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cfuwsjgptr8k0" path="res://Music/Bass.wav" id="5_f17oq"]
 [ext_resource type="PackedScene" uid="uid://x51y41t0s5h4" path="res://Music/musicPlayer.tscn" id="5_xyjsi"]
 [ext_resource type="PackedScene" uid="uid://e51l3kt8pea" path="res://Scenes/Actual Scenes/firstRadioRoom/firstRadioRoom.tscn" id="7_5n0cx"]
+[ext_resource type="PackedScene" uid="uid://cd6sba5vvdlss" path="res://Scenes/Actual Scenes/firstGuardRoom/firstGuardRoom.tscn" id="8_n73xp"]
 
 [node name="MainScene" type="Node2D" node_paths=PackedStringArray("player", "camera")]
 script = ExtResource("1_1afyg")
@@ -33,3 +34,6 @@ volume_db = -10.343
 
 [node name="TestRoom2" parent="." instance=ExtResource("7_5n0cx")]
 position = Vector2(576, 0)
+
+[node name="TestRoom3" parent="." instance=ExtResource("8_n73xp")]
+position = Vector2(576, 320)

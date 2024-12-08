@@ -1,9 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://dyg0f6apjeffw"]
+[gd_scene load_steps=15 format=3 uid="uid://dyg0f6apjeffw"]
 
 [ext_resource type="Script" path="res://Nodes/Enemies/SecurityGuard/guard.gd" id="1_0nq2f"]
 [ext_resource type="Texture2D" uid="uid://8mv8u03102yd" path="res://icon.svg" id="1_8pjau"]
 [ext_resource type="PackedScene" uid="uid://bc87sc3p2vx6" path="res://Nodes/Spotter/Spotter.tscn" id="2_m30uk"]
-[ext_resource type="Texture2D" uid="uid://ba8thuk05ajfu" path="res://icon_small.png" id="3_k6ila"]
 [ext_resource type="Texture2D" uid="uid://8khaghg0gaa2" path="res://Lights/Spotlight.png" id="4_jjtgh"]
 [ext_resource type="AudioStream" uid="uid://bggajos2uxjs8" path="res://Music/Drumbeat.wav" id="5_u837a"]
 [ext_resource type="Script" path="res://Music/music_player_2d.gd" id="6_pj58b"]
@@ -33,26 +32,18 @@ _data = {
 "walk_right": SubResource("Animation_pl0n7")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qstc8"]
-radius = 67.0075
-
 [node name="Guard" type="CharacterBody2D"]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_0nq2f")
 
-[node name="Head" type="Sprite2D" parent="."]
-z_index = 2
-position = Vector2(0, -16)
-texture = ExtResource("3_k6ila")
-
-[node name="Spotter" parent="Head" instance=ExtResource("2_m30uk")]
-position = Vector2(10, 0.0600014)
+[node name="Spotter" parent="." instance=ExtResource("2_m30uk")]
+position = Vector2(0, -25)
 distance = 400.0
-number_of_rays = 10
+number_of_rays = 8
 angle = 22.725
 
-[node name="sprite" type="Sprite2D" parent="."]
+[node name="Guard" type="Sprite2D" parent="."]
 texture = ExtResource("1_8pjau")
 region_enabled = true
 region_rect = Rect2(35.575, 40.76, 32, 64)
@@ -60,65 +51,44 @@ region_rect = Rect2(35.575, 40.76, 32, 64)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_yqrw0")
 
-[node name="Flashlight" type="Sprite2D" parent="."]
-position = Vector2(0, 12)
-texture = ExtResource("1_8pjau")
-offset = Vector2(8.885, 0)
-region_enabled = true
-region_rect = Rect2(16, 16, 16, 8)
-
-[node name="Spotlight" type="PointLight2D" parent="Flashlight"]
-position = Vector2(14, 0)
+[node name="Spotlight" type="PointLight2D" parent="."]
+position = Vector2(5, 0)
 rotation = 3.14159
 shadow_enabled = true
 texture = ExtResource("4_jjtgh")
 offset = Vector2(-291, 0)
 
-[node name="Spotlight2" type="PointLight2D" parent="Flashlight/Spotlight"]
+[node name="Spotlight2" type="PointLight2D" parent="Spotlight"]
 range_item_cull_mask = 2
 texture = ExtResource("4_jjtgh")
 offset = Vector2(-291, 0)
+
+[node name="Flashlight" type="Sprite2D" parent="."]
+texture = ExtResource("1_8pjau")
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 8)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
 stream = ExtResource("5_u837a")
 volume_db = -12.235
-max_distance = 400.0
-attenuation = 0.732043
-bus = &"Drumbeat"
+max_distance = 350.0
+attenuation = 0.0915053
 script = ExtResource("6_pj58b")
 
 [node name="Bang" type="Sprite2D" parent="."]
 visible = false
 light_mask = 0
-z_index = 10
 material = SubResource("CanvasItemMaterial_w7wwo")
-position = Vector2(2, -55.565)
+position = Vector2(4, -55)
 texture = ExtResource("7_kaxsa")
 flip_h = true
 script = ExtResource("8_1d1rm")
-
-[node name="Timer" type="Timer" parent="Bang"]
-wait_time = 0.75
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_y4utw")
 }
 
-[node name="CatchingRange" type="Area2D" parent="."]
-position = Vector2(1, -14)
-scale = Vector2(0.752219, 0.724631)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CatchingRange"]
-shape = SubResource("CircleShape2D_qstc8")
-metadata/_edit_lock_ = true
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(19, 21)
-collision_mask = 2
-hit_from_inside = true
-
-[connection signal="player_entered" from="Head/Spotter" to="." method="_on_spotter_player_entered"]
-[connection signal="player_exited" from="Head/Spotter" to="." method="_on_spotter_player_exited"]
-[connection signal="timeout" from="Bang/Timer" to="Bang" method="hide"]
+[connection signal="player_entered" from="Spotter" to="." method="_on_spotter_player_entered"]
+[connection signal="player_exited" from="Spotter" to="." method="_on_spotter_player_exited"]

@@ -1,9 +1,9 @@
 @tool
 extends Node2D
 
-signal player_entered
+signal player_entered(player)
 
-signal player_exited
+signal player_exited(player)
 #Distance: The "Length" of the vision cone.
 @export_range(100,1000) var distance : float = 250.0 :
 	set(value):
@@ -35,6 +35,7 @@ signal player_exited
 		number_of_rays = number_of_rays;
 
 var playerInCollider = false;
+var p : Player;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -47,11 +48,12 @@ func _physics_process(delta):
 		if r is RayCast2D:
 			if r.get_collider() is Player:
 				playerInCollider = true;
+				p = r.get_collider();
 	if playerInCollider != prevState:
 		if playerInCollider:
-			emit_signal("player_entered");
+			emit_signal("player_entered",p);
 		else:
-			emit_signal("player_exited");
+			emit_signal("player_exited",p);
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
