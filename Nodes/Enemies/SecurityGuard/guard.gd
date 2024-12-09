@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const WALKSPEED = 100.0;
-const RUNSPEED = 300.0;
+const RUNSPEED = 400.0;
 const JUMP_VELOCITY = -300.0
 
 var lastKnownPlayerPos : Vector2 = Vector2.ZERO;
