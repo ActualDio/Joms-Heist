@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://clx0wg65kc6d7"
-path="res://.godot/imported/Vibes.wav-dfae3f96c0ce9dc3bead245d877be9c9.sample"
+path="res://.godot/imported/Vibes.wav-e869f92e47216746c971398c32b7b216.sample"
 
 [deps]
 
-source_file="res://Music/Vibes.wav"
-dest_files=["res://.godot/imported/Vibes.wav-dfae3f96c0ce9dc3bead245d877be9c9.sample"]
+source_file="res://music/Vibes.wav"
+dest_files=["res://.godot/imported/Vibes.wav-e869f92e47216746c971398c32b7b216.sample"]
 
 [params]
 

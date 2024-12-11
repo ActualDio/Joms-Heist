@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bad6em73ern43"
-path="res://.godot/imported/Hi Hat.wav-3d231b2ff3a4ceff3063dded1b4958ce.sample"
+path="res://.godot/imported/Hi Hat.wav-22d089d37f8f6063d314c73174589d49.sample"
 
 [deps]
 
-source_file="res://Music/Hi Hat.wav"
-dest_files=["res://.godot/imported/Hi Hat.wav-3d231b2ff3a4ceff3063dded1b4958ce.sample"]
+source_file="res://music/Hi Hat.wav"
+dest_files=["res://.godot/imported/Hi Hat.wav-22d089d37f8f6063d314c73174589d49.sample"]
 
 [params]
 
