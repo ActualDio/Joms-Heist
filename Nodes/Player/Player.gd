@@ -40,8 +40,8 @@ func uncrouch():
 
 func _input(event):
 	if event.is_action_pressed("interact") && caught:
-		caught = false;
 		position = respawnPoint;
+		caught = false;
 		$AnimationPlayer.play("default");
 		$CaughtText.hide();
 

@@ -141,6 +141,7 @@ texture_scale = 3.65
 position = Vector2(1312, 720)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Radio"]
+visible = false
 
 [node name="TextEvent" parent="Radio/CanvasLayer" instance=ExtResource("13_e5h2h")]
 dialog = ">P

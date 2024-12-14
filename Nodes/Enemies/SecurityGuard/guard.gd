@@ -141,13 +141,14 @@ func _on_spotter_player_exited(p) -> void:
 
 func _on_catching_range_body_entered(body: Node2D) -> void:
 	if body is Player && canSeePlayer:
-		body.triggerGameOver();
-		currentState = STATES.ALERT;
-		playerIsCaught = true;
+		if !playerIsCaught:
+			body.triggerGameOver();
+			currentState = STATES.ALERT;
+			playerIsCaught = true;
 
 
 func _on_catching_range_body_exited(body: Node2D) -> void:
-	if body is Player:
+	if body is Player && body.global_position.distance_to(self.global_position) > 100:
 		currentState = STATES.WALK;
 		$Head.rotation = 0;
 		$Flashlight.rotation = 0;

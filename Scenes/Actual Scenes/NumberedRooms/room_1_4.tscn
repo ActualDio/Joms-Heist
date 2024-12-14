@@ -88,6 +88,7 @@ position = Vector2(64, 256)
 position = Vector2(689, 271)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Radio"]
+visible = false
 
 [node name="TextEvent" parent="Radio/CanvasLayer" instance=ExtResource("10_h4y3v")]
 dialog = ">Thetntm
