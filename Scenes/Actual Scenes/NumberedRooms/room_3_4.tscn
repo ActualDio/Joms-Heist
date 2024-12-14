@@ -1,19 +1,19 @@
-[gd_scene load_steps=14 format=4 uid="uid://d33me6qwvw0sl"]
+[gd_scene load_steps=14 format=4 uid="uid://nfi6ektwuh5y"]
 
-[ext_resource type="Script" path="res://Scenes/Actual Scenes/defaultRoom/roomBase.gd" id="1_6cqt3"]
-[ext_resource type="PackedScene" uid="uid://btx2qw3isgxaw" path="res://Tilesets/IndoorTileMap.tscn" id="2_v17wb"]
-[ext_resource type="Texture2D" uid="uid://d12ltvbhj6bp2" path="res://Tilesets/wallfix.png" id="3_ls012"]
-[ext_resource type="Texture2D" uid="uid://bc101u4d0kld7" path="res://Tilesets/tiles.png" id="4_cuiq4"]
-[ext_resource type="Texture2D" uid="uid://c7clcbeyildj3" path="res://Tilesets/Tilenormal.png" id="5_2bfwx"]
-[ext_resource type="Texture2D" uid="uid://dtclttm7ycjfu" path="res://Tilesets/tileSpecular.png" id="6_1h6qf"]
-[ext_resource type="PackedScene" uid="uid://cd7ttkfqpg2s4" path="res://Nodes/Enemies/Camera/Camera.tscn" id="7_0f4p3"]
+[ext_resource type="Script" path="res://Scenes/Actual Scenes/defaultRoom/roomBase.gd" id="1_1tykv"]
+[ext_resource type="PackedScene" uid="uid://btx2qw3isgxaw" path="res://Tilesets/IndoorTileMap.tscn" id="2_nq26l"]
+[ext_resource type="Texture2D" uid="uid://d12ltvbhj6bp2" path="res://Tilesets/wallfix.png" id="3_vtw0n"]
+[ext_resource type="Texture2D" uid="uid://bc101u4d0kld7" path="res://Tilesets/tiles.png" id="4_hf1ip"]
+[ext_resource type="Texture2D" uid="uid://c7clcbeyildj3" path="res://Tilesets/Tilenormal.png" id="5_2v2po"]
+[ext_resource type="Texture2D" uid="uid://dtclttm7ycjfu" path="res://Tilesets/tileSpecular.png" id="6_61erb"]
+[ext_resource type="PackedScene" uid="uid://cd7ttkfqpg2s4" path="res://Nodes/Enemies/Camera/Camera.tscn" id="7_kx0ea"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_syjba"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgb76"]
 resource_local_to_scene = true
-size = Vector2(767, 320)
+size = Vector2(767, 369)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ircl4"]
-texture = ExtResource("3_ls012")
+texture = ExtResource("3_vtw0n")
 texture_region_size = Vector2i(32, 32)
 1:1/size_in_atlas = Vector2i(3, 3)
 1:1/0 = 0
@@ -24,9 +24,9 @@ texture_region_size = Vector2i(32, 32)
 0:1/0 = 0
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_npuvf"]
-diffuse_texture = ExtResource("4_cuiq4")
-normal_texture = ExtResource("5_2bfwx")
-specular_texture = ExtResource("6_1h6qf")
+diffuse_texture = ExtResource("4_hf1ip")
+normal_texture = ExtResource("5_2v2po")
+specular_texture = ExtResource("6_61erb")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1eqoj"]
 texture = SubResource("CanvasTexture_npuvf")
@@ -41,9 +41,9 @@ sources/0 = SubResource("TileSetAtlasSource_ircl4")
 [sub_resource type="TileSet" id="TileSet_45ngx"]
 tile_size = Vector2i(32, 32)
 
-[node name="Room2" type="Node2D"]
-position = Vector2(-192, 320)
-script = ExtResource("1_6cqt3")
+[node name="Room3-4" type="Node2D"]
+position = Vector2(1149, 1152)
+script = ExtResource("1_1tykv")
 size = Vector2(768, 320)
 cameraPos = Vector2(384, 160)
 cameraZoom = 1.5
@@ -55,9 +55,9 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomDetector"]
 position = Vector2(382.5, 160)
-shape = SubResource("RectangleShape2D_syjba")
+shape = SubResource("RectangleShape2D_lgb76")
 
-[node name="TileMap" parent="." instance=ExtResource("2_v17wb")]
+[node name="TileMap" parent="." instance=ExtResource("2_nq26l")]
 tile_map_data = PackedByteArray("AAARAAAAAQABAAIAAAAAAAAAAQABAAIAAAAFAAAAAQABAAIAAAAEAAAAAQABAAIAAAADAAAAAQABAAIAAAACAAAAAQABAAIAAAABAAAAAQABAAIAAAAQAAAAAQABAAIAAAAPAAAAAQABAAIAAAAOAAAAAQABAAIAAAANAAAAAQABAAIAAAAMAAAAAQABAAIAAAALAAAAAQABAAIAAAAKAAAAAQABAAIAAAAJAAAAAQABAAIAAAAIAAAAAQABAAIAAAAHAAAAAQABAAIAAAARAAoAAAABAAEAAAARAAkAAAABAAAAAAAQAAoAAAABAAEAAAAQAAkAAAABAAAAAAAPAAoAAAABAAEAAAAPAAkAAAABAAAAAAAOAAoAAAABAAEAAAAOAAkAAAABAAAAAAANAAoAAAABAAEAAAANAAkAAAABAAAAAAAMAAoAAAABAAEAAAAMAAkAAAABAAAAAAALAAoAAAABAAEAAAALAAkAAAABAAAAAAAKAAoAAAABAAEAAAAKAAkAAAABAAAAAAAJAAoAAAABAAEAAAAJAAkAAAABAAAAAAAIAAoAAAABAAEAAAAIAAkAAAABAAAAAAAHAAoAAAABAAEAAAAHAAkAAAABAAAAAAAGAAoAAAABAAEAAAAGAAkAAAABAAAAAAAFAAoAAAABAAEAAAAFAAkAAAABAAAAAAAEAAoAAAABAAEAAAAEAAkAAAABAAAAAAADAAoAAAABAAEAAAADAAkAAAABAAAAAAACAAoAAAABAAEAAAACAAkAAAABAAAAAAABAAoAAAABAAEAAAABAAkAAAABAAAAAAAAAAoAAAABAAEAAAAAAAkAAAABAAAAAAAGAAAAAQABAAIAAAASAAAAAQABAAIAAAATAAAAAQABAAIAAAAUAAAAAQABAAIAAAAVAAAAAQABAAIAAAAWAAAAAQABAAIAAAAXAAAAAQABAAIAAAAAAP//AQABAAEAAAABAP//AQABAAEAAAACAP//AQABAAEAAAADAP//AQABAAEAAAAEAP//AQABAAEAAAAFAP//AQABAAEAAAAGAP//AQABAAEAAAAHAP//AQABAAEAAAAIAP//AQABAAEAAAAJAP//AQABAAEAAAAKAP//AQABAAEAAAALAP//AQABAAEAAAAMAP//AQABAAEAAAANAP//AQABAAEAAAAOAP//AQABAAEAAAAPAP//AQABAAEAAAAQAP//AQABAAEAAAARAP//AQABAAEAAAASAP//AQABAAEAAAATAP//AQABAAEAAAAUAP//AQABAAEAAAAVAP//AQABAAEAAAAWAP//AQABAAEAAAAXAP//AQABAAEAAAASAAoAAAABAAEAAAATAAoAAAABAAEAAAAUAAoAAAABAAEAAAAVAAoAAAABAAEAAAAWAAoAAAABAAEAAAAXAAoAAAABAAEAAAASAAkAAAABAAAAAAATAAkAAAABAAAAAAAUAAkAAAABAAAAAAAVAAkAAAABAAAAAAAWAAkAAAABAAAAAAAXAAkAAAABAAAAAAALAAIAAAAAAAMAAAAMAAIAAAACAAMAAAA=")
 
 [node name="BG" type="TileMapLayer" parent="."]
@@ -70,13 +70,19 @@ tile_set = SubResource("TileSet_s6pj0")
 z_index = -3
 tile_set = SubResource("TileSet_45ngx")
 
-[node name="Camera" parent="." instance=ExtResource("7_0f4p3")]
+[node name="Camera" parent="." instance=ExtResource("7_kx0ea")]
 position = Vector2(382, 98)
 
 [node name="Bang" parent="Camera" index="1"]
 visible = false
+rotation = -2.02133
+
+[node name="Spotter" parent="Camera" index="3"]
+number_of_rays = 10
+angle = 53.0
 
 [connection signal="body_entered" from="RoomDetector" to="." method="_on_room_detector_body_entered"]
 [connection signal="body_exited" from="RoomDetector" to="." method="_on_room_detector_body_exited"]
+[connection signal="player_entered" from="Camera" to="." method="_on_camera_player_entered"]
 
 [editable path="Camera"]
