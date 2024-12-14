@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bggajos2uxjs8"
-path="res://.godot/imported/Drumbeat.wav-b28152f1d7911d6f5e574495b2909239.sample"
+path="res://.godot/imported/Drumbeat.wav-38731c3b529b3c05824ae3f9888ce50d.sample"
 
 [deps]
 
-source_file="res://Music/Drumbeat.wav"
-dest_files=["res://.godot/imported/Drumbeat.wav-b28152f1d7911d6f5e574495b2909239.sample"]
+source_file="res://music/Drumbeat.wav"
+dest_files=["res://.godot/imported/Drumbeat.wav-38731c3b529b3c05824ae3f9888ce50d.sample"]
 
 [params]
 
