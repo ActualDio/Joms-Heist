@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bc87sc3p2vx6" path="res://Nodes/Spotter/Spotter.tscn" id="2_m30uk"]
 [ext_resource type="Texture2D" uid="uid://ba8thuk05ajfu" path="res://icon_small.png" id="3_k6ila"]
 [ext_resource type="Texture2D" uid="uid://8khaghg0gaa2" path="res://Lights/Spotlight.png" id="4_jjtgh"]
-[ext_resource type="AudioStream" uid="uid://bggajos2uxjs8" path="res://Music/Drumbeat.wav" id="5_u837a"]
+[ext_resource type="AudioStream" uid="uid://bggajos2uxjs8" path="res://music/Drumbeat.wav" id="5_u837a"]
 [ext_resource type="Script" path="res://Music/music_player_2d.gd" id="6_pj58b"]
 [ext_resource type="Texture2D" uid="uid://crdnr2sv473l0" path="res://Nodes/Spotter/bang.png" id="7_kaxsa"]
 [ext_resource type="Script" path="res://Nodes/Enemies/SecurityGuard/bang.gd" id="8_1d1rm"]

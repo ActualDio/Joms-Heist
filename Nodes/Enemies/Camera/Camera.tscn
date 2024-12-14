@@ -1,0 +1,95 @@
+[gd_scene load_steps=11 format=3 uid="uid://cd7ttkfqpg2s4"]
+
+[ext_resource type="Script" path="res://Nodes/Enemies/Camera/camera.gd" id="1_2lgwj"]
+[ext_resource type="PackedScene" uid="uid://bc87sc3p2vx6" path="res://Nodes/Spotter/Spotter.tscn" id="1_r07y2"]
+[ext_resource type="Texture2D" uid="uid://8khaghg0gaa2" path="res://Lights/Spotlight.png" id="2_sljem"]
+[ext_resource type="Texture2D" uid="uid://cy66wayt1jy48" path="res://Nodes/Enemies/Camera/Camera.png" id="3_exiu3"]
+[ext_resource type="Texture2D" uid="uid://crdnr2sv473l0" path="res://Nodes/Spotter/bang.png" id="3_yapn0"]
+[ext_resource type="Script" path="res://Nodes/Enemies/SecurityGuard/bang.gd" id="4_gaget"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_a77ec"]
+light_mode = 1
+
+[sub_resource type="Animation" id="Animation_usvv3"]
+resource_name = "CameraMotion"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 2.5, 5.03333, 7.5, 10),
+"transitions": PackedFloat32Array(1.5, 0.5, 1.5, 0.5, 1),
+"update": 0,
+"values": [0.0, 1.5708, 3.14159, 1.5708, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bang:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5, 5, 7.5, 10),
+"transitions": PackedFloat32Array(1.5, 0.5, 1.5, 0.5, 1),
+"update": 0,
+"values": [0.0, -1.5708, -3.14159, -1.5708, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_a7qml"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cynln"]
+_data = {
+"CameraMotion": SubResource("Animation_usvv3"),
+"RESET": SubResource("Animation_a7qml")
+}
+
+[node name="Camera" type="Node2D"]
+script = ExtResource("1_2lgwj")
+
+[node name="Spotlight2" type="PointLight2D" parent="."]
+texture_filter = 1
+rotation = 3.14098
+energy = 1.15
+shadow_enabled = true
+texture = ExtResource("2_sljem")
+offset = Vector2(-145.365, 0)
+texture_scale = 0.5
+
+[node name="Bang" type="Sprite2D" parent="."]
+light_mask = 0
+z_index = 10
+material = SubResource("CanvasItemMaterial_a77ec")
+position = Vector2(21, -26)
+texture = ExtResource("3_yapn0")
+flip_h = true
+script = ExtResource("4_gaget")
+
+[node name="CameraSprite" type="Sprite2D" parent="."]
+rotation = -3.14159
+texture = ExtResource("3_exiu3")
+
+[node name="Spotter" parent="." instance=ExtResource("1_r07y2")]
+
+[node name="CameraMotion" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cynln")
+}
+
+[connection signal="player_entered" from="Spotter" to="." method="_on_spotter_player_entered"]
