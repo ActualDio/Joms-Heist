@@ -13,4 +13,9 @@ func _process(delta: float) -> void:
 
 func _on_spotter_player_entered(p: Node2D) -> void:
 	emit_signal("player_entered", p)
-	$Bang.show();
+	$Spotlight2.color = Color.RED;
+	#$Bang.show();
+
+
+func _on_spotter_player_exited(player: Variant) -> void:
+	$Spotlight2.color = Color.WHITE;

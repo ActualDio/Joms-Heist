@@ -1,17 +1,13 @@
 [gd_scene load_steps=18 format=3 uid="uid://dakgb3c130kxp"]
 
 [ext_resource type="Script" path="res://Nodes/Player/Player.gd" id="1_0gjy5"]
-[ext_resource type="Texture2D" uid="uid://btla7j6iiot7e" path="res://Nodes/Player/32_placeholderHero2.png" id="2_3mgtt"]
 [ext_resource type="Theme" uid="uid://cy6cin16y5237" path="res://Themes/gameOver.tres" id="4_228a8"]
 [ext_resource type="Texture2D" uid="uid://coehknbvkda2e" path="res://Nodes/Player/playerCaught.png" id="4_k1rir"]
 [ext_resource type="Texture2D" uid="uid://c2qfx1hqcd55d" path="res://Lights/PointLight.png" id="4_wjucq"]
 [ext_resource type="Texture2D" uid="uid://crstbl2vp36gs" path="res://Nodes/Player/characterjCrouchPlaceholder.png" id="6_gcht1"]
 [ext_resource type="Texture2D" uid="uid://66xhad8u6ujh" path="res://Nodes/Player/characterjflipped.png" id="6_lsidf"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_08vmu"]
-diffuse_texture = ExtResource("2_3mgtt")
-specular_color = Color(0.753984, 0.753984, 0.753984, 1)
-specular_shininess = 0.08
+[sub_resource type="CircleShape2D" id="CircleShape2D_ob2ct"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2qf8h"]
 size = Vector2(22, 24)
@@ -55,7 +51,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("6_lsidf")]
+"values": [ExtResource("4_k1rir")]
 }
 
 [sub_resource type="Animation" id="Animation_lxelt"]
@@ -82,7 +78,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("6_lsidf")]
+"values": [ExtResource("4_k1rir")]
 }
 
 [sub_resource type="Animation" id="Animation_1223q"]
@@ -121,7 +117,19 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [SubResource("CanvasTexture_08vmu")]
+"values": [ExtResource("6_lsidf")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CrouchSprite:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_o4wx3"]
@@ -179,6 +187,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [ExtResource("6_lsidf")]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CrouchSprite:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_4pkp5"]
 resource_name = "walkingRight"
@@ -208,6 +228,33 @@ tracks/1/keys = {
 "update": 1,
 "values": [ExtResource("6_lsidf")]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CrouchSprite:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_e0yp4"]
+resource_name = "in_air"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_k1rir")]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n28ow"]
 _data = {
@@ -216,6 +263,7 @@ _data = {
 "Jump_Right": SubResource("Animation_lxelt"),
 "RESET": SubResource("Animation_1223q"),
 "default": SubResource("Animation_o4wx3"),
+"in_air": SubResource("Animation_e0yp4"),
 "walkingLeft": SubResource("Animation_ytyls"),
 "walkingRight": SubResource("Animation_4pkp5")
 }
@@ -223,10 +271,10 @@ _data = {
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_0gjy5")
 
-[node name="CeilingDetector" type="RayCast2D" parent="."]
+[node name="CeilingDetector" type="ShapeCast2D" parent="."]
+shape = SubResource("CircleShape2D_ob2ct")
 target_position = Vector2(0, -24)
 collision_mask = 2
-hit_from_inside = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(0, -2)
@@ -240,9 +288,8 @@ range_item_cull_mask = 2
 texture = ExtResource("4_wjucq")
 
 [node name="MainSprite" type="Sprite2D" parent="."]
-z_index = 3
 texture_filter = 1
-texture = SubResource("CanvasTexture_08vmu")
+texture = ExtResource("6_lsidf")
 metadata/_edit_lock_ = true
 
 [node name="MainCollisionShape" type="CollisionShape2D" parent="."]
@@ -252,6 +299,7 @@ shape = SubResource("RectangleShape2D_2qf8h")
 
 [node name="CrouchSprite" type="Sprite2D" parent="."]
 visible = false
+z_as_relative = false
 position = Vector2(2, 11)
 texture = ExtResource("6_gcht1")
 metadata/_edit_lock_ = true

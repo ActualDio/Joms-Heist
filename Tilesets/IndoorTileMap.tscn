@@ -932,4 +932,5 @@ sources/1 = SubResource("TileSetAtlasSource_4qrjp")
 
 [node name="TileMap" type="TileMapLayer"]
 light_mask = 2
+z_index = 2
 tile_set = SubResource("TileSet_naa8e")

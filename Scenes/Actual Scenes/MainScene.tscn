@@ -1,8 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://chncjn52kc7b"]
+[gd_scene load_steps=30 format=3 uid="uid://chncjn52kc7b"]
 
 [ext_resource type="Script" path="res://Scenes/RoomManager/RoomManager.gd" id="1_1afyg"]
 [ext_resource type="Script" path="res://Scenes/RoomManager/cool_camera.gd" id="2_ivv0c"]
 [ext_resource type="PackedScene" uid="uid://dakgb3c130kxp" path="res://Nodes/Player/Player.tscn" id="3_n7rup"]
+[ext_resource type="AudioStream" uid="uid://bad6em73ern43" path="res://Music/Hi Hat.wav" id="4_eo1xq"]
 [ext_resource type="PackedScene" uid="uid://ds4pqty2ln7sg" path="res://Scenes/Actual Scenes/FirstRoom/FirstRoom.tscn" id="4_o7ojk"]
 [ext_resource type="AudioStream" uid="uid://cfuwsjgptr8k0" path="res://Music/Bass.wav" id="5_f17oq"]
 [ext_resource type="PackedScene" uid="uid://x51y41t0s5h4" path="res://Music/musicPlayer.tscn" id="5_xyjsi"]
@@ -12,27 +13,45 @@
 [ext_resource type="PackedScene" uid="uid://dxs2sick5avco" path="res://Scenes/Actual Scenes/NumberedRooms/room_1_1.tscn" id="10_ja7nu"]
 [ext_resource type="PackedScene" uid="uid://df2uxs1i641ii" path="res://Scenes/Actual Scenes/NumberedRooms/stairway_2_1.tscn" id="12_a4kwl"]
 [ext_resource type="PackedScene" uid="uid://do0g3awh6w1cm" path="res://Scenes/Actual Scenes/NumberedRooms/stairway_3_1.tscn" id="14_pfqx4"]
-[ext_resource type="PackedScene" uid="uid://bt1fcasu40e46" path="res://Scenes/Actual Scenes/NumberedRooms/room_1_4.tscn" id="15_7liab"]
+[ext_resource type="PackedScene" uid="uid://ce4q460my2sgi" path="res://Scenes/Actual Scenes/NumberedRooms/room_1_4.tscn" id="15_7liab"]
+[ext_resource type="PackedScene" uid="uid://dmj5k04oxgsgf" path="res://Scenes/Actual Scenes/NumberedRooms/room_2_1.tscn" id="15_p15mx"]
 [ext_resource type="PackedScene" uid="uid://kybgcbb3rouy" path="res://Scenes/Actual Scenes/NumberedRooms/stairway_top.tscn" id="15_r4j34"]
-[ext_resource type="PackedScene" uid="uid://shjqn6app7lh" path="res://Scenes/Actual Scenes/NumberedRooms/room_1_5.tscn" id="16_3tgfp"]
+[ext_resource type="PackedScene" uid="uid://b5kthh0goow3n" path="res://Scenes/Actual Scenes/NumberedRooms/room_1_5.tscn" id="16_3tgfp"]
 [ext_resource type="PackedScene" uid="uid://dxku0spxqp0re" path="res://Scenes/Actual Scenes/NumberedRooms/stairway_bottom.tscn" id="16_eiu2r"]
-[ext_resource type="PackedScene" uid="uid://b8pob1mupcbsr" path="res://Scenes/Actual Scenes/NumberedRooms/room_1_6.tscn" id="17_6flc8"]
-[ext_resource type="PackedScene" uid="uid://cnoup0ad2gqxv" path="res://Scenes/Actual Scenes/NumberedRooms/room_2_6.tscn" id="18_q6y8h"]
-[ext_resource type="PackedScene" uid="uid://dxvv4pnuxnnma" path="res://Scenes/Actual Scenes/NumberedRooms/room_2_5.tscn" id="19_j2ja2"]
-[ext_resource type="PackedScene" uid="uid://hr05scf8td5s" path="res://Scenes/Actual Scenes/NumberedRooms/room_2_4.tscn" id="20_x5ela"]
-[ext_resource type="PackedScene" uid="uid://c141mxxpmrvto" path="res://Scenes/Actual Scenes/NumberedRooms/room_2_3.tscn" id="21_25s2k"]
-[ext_resource type="PackedScene" uid="uid://dqjjndklilyc0" path="res://Scenes/Actual Scenes/NumberedRooms/room_2_2.tscn" id="22_spnif"]
-[ext_resource type="PackedScene" uid="uid://cg13qqnpw2n33" path="res://Scenes/Actual Scenes/NumberedRooms/room_3_2.tscn" id="23_njlts"]
-[ext_resource type="PackedScene" uid="uid://3b3i2i0jc33o" path="res://Scenes/Actual Scenes/NumberedRooms/room_3_3.tscn" id="24_xu8fc"]
-[ext_resource type="PackedScene" uid="uid://nfi6ektwuh5y" path="res://Scenes/Actual Scenes/NumberedRooms/room_3_4.tscn" id="25_dktgp"]
-[ext_resource type="PackedScene" uid="uid://d1l8umjcfmy52" path="res://Scenes/Actual Scenes/NumberedRooms/room_3_5.tscn" id="26_5mv3g"]
-[ext_resource type="PackedScene" uid="uid://c3xuevo67twgk" path="res://Scenes/Actual Scenes/NumberedRooms/room_3_6.tscn" id="27_qo10s"]
-[ext_resource type="PackedScene" uid="uid://bfhy6xycm0hj5" path="res://Scenes/Actual Scenes/NumberedRooms/room_3_7.tscn" id="28_edni4"]
+[ext_resource type="PackedScene" uid="uid://bkxdn2sprj5t8" path="res://Scenes/Actual Scenes/NumberedRooms/room_3_1.tscn" id="18_rnqex"]
+[ext_resource type="PackedScene" uid="uid://n30jappoy8ok" path="res://Scenes/Actual Scenes/NumberedRooms/room_2_4.tscn" id="20_x5ela"]
+[ext_resource type="PackedScene" uid="uid://1vyvllq21n5i" path="res://Scenes/Actual Scenes/NumberedRooms/room_2_3.tscn" id="21_25s2k"]
+[ext_resource type="PackedScene" uid="uid://2ghq5xt6adiv" path="res://Scenes/Actual Scenes/NumberedRooms/room_2_2.tscn" id="22_spnif"]
+[ext_resource type="PackedScene" uid="uid://x1ocic5qq35o" path="res://Scenes/Actual Scenes/NumberedRooms/room_3_2.tscn" id="23_njlts"]
+[ext_resource type="PackedScene" uid="uid://dpa305v424amw" path="res://Scenes/Actual Scenes/NumberedRooms/room_3_3.tscn" id="24_xu8fc"]
+[ext_resource type="PackedScene" uid="uid://da0pbaosxvjhh" path="res://Scenes/Actual Scenes/NumberedRooms/room_3_4.tscn" id="25_dktgp"]
+[ext_resource type="PackedScene" uid="uid://fd4btwsihnpu" path="res://Scenes/Actual Scenes/NumberedRooms/room_3_5.tscn" id="26_5mv3g"]
+[ext_resource type="PackedScene" uid="uid://do6asbpdufa28" path="res://Scenes/Actual Scenes/finalRoom/finalRoom.tscn" id="29_yscrg"]
+[ext_resource type="PackedScene" uid="uid://esq880upm5l7" path="res://Nodes/trigger.tscn" id="31_dncfq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jj86f"]
+size = Vector2(96, 96)
 
 [node name="MainScene" type="Node2D" node_paths=PackedStringArray("player", "camera")]
 script = ExtResource("1_1afyg")
 player = NodePath("Player")
 camera = NodePath("CoolCamera")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.333836, 0.34078, 0.453577, 1)
+
+[node name="Bass" parent="." instance=ExtResource("5_xyjsi")]
+process_mode = 3
+stream = ExtResource("5_f17oq")
+volume_db = -16.803
+bus = &"Bass"
+
+[node name="HiHat" parent="." instance=ExtResource("5_xyjsi")]
+process_mode = 3
+stream = ExtResource("4_eo1xq")
+volume_db = -16.803
+bus = &"Hi Hat"
+startMuted = true
 
 [node name="CoolCamera" type="Camera2D" parent="."]
 process_mode = 3
@@ -47,45 +66,30 @@ position = Vector2(127, 120)
 [node name="FirstRoom" parent="." instance=ExtResource("4_o7ojk")]
 metadata/_edit_lock_ = true
 
-[node name="MusicPlayer" parent="." instance=ExtResource("5_xyjsi")]
-process_mode = 3
-stream = ExtResource("5_f17oq")
-volume_db = -16.803
-
 [node name="SecondRoom" parent="." instance=ExtResource("7_5n0cx")]
 position = Vector2(576, 0)
 
-[node name="Room1-3" parent="." instance=ExtResource("8_qb7ay")]
+[node name="Room1-1" parent="." instance=ExtResource("10_ja7nu")]
+position = Vector2(-960, 320)
 
 [node name="Room1-2" parent="." instance=ExtResource("9_kqcpl")]
 
-[node name="Room1-1" parent="." instance=ExtResource("10_ja7nu")]
-
-[node name="Stairway1-7" parent="." instance=ExtResource("15_r4j34")]
-position = Vector2(3458, 320)
-
-[node name="Stairway2-1" parent="." instance=ExtResource("12_a4kwl")]
-
-[node name="Stairway2-7" parent="." instance=ExtResource("16_eiu2r")]
-position = Vector2(3458, 736)
-
-[node name="Stairway3-1" parent="." instance=ExtResource("14_pfqx4")]
+[node name="Room1-3" parent="." instance=ExtResource("8_qb7ay")]
 
 [node name="Room1-4" parent="." instance=ExtResource("15_7liab")]
 
 [node name="Room1-5" parent="." instance=ExtResource("16_3tgfp")]
 
-[node name="Room1-6" parent="." instance=ExtResource("17_6flc8")]
+[node name="Room2-1" parent="." instance=ExtResource("15_p15mx")]
+position = Vector2(-384, 768)
 
-[node name="Room2-6" parent="." instance=ExtResource("18_q6y8h")]
-
-[node name="Room2-5" parent="." instance=ExtResource("19_j2ja2")]
-
-[node name="Room2-4" parent="." instance=ExtResource("20_x5ela")]
+[node name="Room2-2" parent="." instance=ExtResource("22_spnif")]
 
 [node name="Room2-3" parent="." instance=ExtResource("21_25s2k")]
 
-[node name="Room2-2" parent="." instance=ExtResource("22_spnif")]
+[node name="Room2-4" parent="." instance=ExtResource("20_x5ela")]
+
+[node name="Room3-1" parent="." instance=ExtResource("18_rnqex")]
 
 [node name="Room3-2" parent="." instance=ExtResource("23_njlts")]
 
@@ -95,6 +99,26 @@ position = Vector2(3458, 736)
 
 [node name="Room3-5" parent="." instance=ExtResource("26_5mv3g")]
 
-[node name="Room3-6" parent="." instance=ExtResource("27_qo10s")]
+[node name="Stairway1-7" parent="." instance=ExtResource("15_r4j34")]
+position = Vector2(2688, 384)
 
-[node name="Room3-7" parent="." instance=ExtResource("28_edni4")]
+[node name="Stairway2-1" parent="." instance=ExtResource("12_a4kwl")]
+position = Vector2(-1152, 800)
+
+[node name="Stairway2-7" parent="." instance=ExtResource("16_eiu2r")]
+position = Vector2(2688, 800)
+
+[node name="Stairway3-1" parent="." instance=ExtResource("14_pfqx4")]
+position = Vector2(-1152, 1216)
+
+[node name="FinalRoom" parent="." instance=ExtResource("29_yscrg")]
+position = Vector2(3454, 736)
+
+[node name="HiHatTrigger" parent="." instance=ExtResource("31_dncfq")]
+position = Vector2(768, 448)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HiHatTrigger"]
+position = Vector2(16, -16)
+shape = SubResource("RectangleShape2D_jj86f")
+
+[connection signal="on_player_entered" from="HiHatTrigger" to="HiHat" method="fadeIn"]

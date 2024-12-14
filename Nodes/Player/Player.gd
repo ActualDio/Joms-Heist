@@ -60,7 +60,8 @@ func _physics_process(delta):
 					$AnimationPlayer.play("walkingLeft");
 			else:
 				$AnimationPlayer.play("default");
-	
+		elif velocity.y > 0:
+			$AnimationPlayer.play("in_air");
 	
 	#Vertical Speed Stuff
 	if not is_on_floor():
