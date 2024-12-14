@@ -4,11 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bfhenl358rab7" path="res://Nodes/Enemies/SecurityGuard/guardHead.png" id="2_7q5td"]
 [ext_resource type="PackedScene" uid="uid://bc87sc3p2vx6" path="res://Nodes/Spotter/Spotter.tscn" id="2_m30uk"]
 [ext_resource type="Texture2D" uid="uid://8khaghg0gaa2" path="res://Lights/Spotlight.png" id="4_jjtgh"]
-
 [ext_resource type="Texture2D" uid="uid://dxc3loveevirw" path="res://Nodes/Enemies/SecurityGuard/guardbody.png" id="4_moq8i"]
 [ext_resource type="Texture2D" uid="uid://fb7p86pseuc1" path="res://Nodes/Enemies/SecurityGuard/guardFlashlight.png" id="5_qihi5"]
 [ext_resource type="AudioStream" uid="uid://bggajos2uxjs8" path="res://Music/Drumbeat.wav" id="5_u837a"]
-
 [ext_resource type="Script" path="res://Music/music_player_2d.gd" id="6_pj58b"]
 [ext_resource type="Texture2D" uid="uid://crdnr2sv473l0" path="res://Nodes/Spotter/bang.png" id="7_kaxsa"]
 [ext_resource type="Script" path="res://Nodes/Enemies/SecurityGuard/bang.gd" id="8_1d1rm"]
@@ -40,7 +38,7 @@ size = Vector2(86.4111, 66.2407)
 
 [node name="Guard" type="CharacterBody2D"]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 34
 script = ExtResource("1_0nq2f")
 
 [node name="Head" type="Sprite2D" parent="."]

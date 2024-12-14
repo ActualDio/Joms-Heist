@@ -24,18 +24,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_a7qml"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cynln"]
 _data = {
@@ -46,8 +34,11 @@ _data = {
 [node name="Camera" type="Node2D"]
 script = ExtResource("1_2lgwj")
 
-[node name="Spotlight2" type="PointLight2D" parent="."]
+[node name="Main" type="Node2D" parent="."]
+
+[node name="Spotlight2" type="PointLight2D" parent="Main"]
 texture_filter = 1
+position = Vector2(10, 0)
 rotation = 3.14098
 energy = 1.15
 shadow_enabled = true
@@ -55,19 +46,29 @@ texture = ExtResource("2_sljem")
 offset = Vector2(-145.365, 0)
 texture_scale = 0.5
 
-[node name="CameraSprite" type="Sprite2D" parent="."]
+[node name="Spotlight3" type="PointLight2D" parent="Main/Spotlight2"]
+texture_filter = 1
+energy = 1.15
+range_item_cull_mask = 2
+shadow_item_cull_mask = 2
+texture = ExtResource("2_sljem")
+offset = Vector2(-145.365, 0)
+texture_scale = 0.5
+
+[node name="CameraSprite" type="Sprite2D" parent="Main"]
 position = Vector2(8, 0)
 rotation = -3.14159
 texture = ExtResource("3_exiu3")
 
-[node name="Spotter" parent="." instance=ExtResource("1_r07y2")]
+[node name="Spotter" parent="Main" instance=ExtResource("1_r07y2")]
 number_of_rays = 10
 angle = 53.0
 
-[node name="CameraMotion" type="AnimationPlayer" parent="."]
+[node name="CameraMotion" type="AnimationPlayer" parent="Main"]
+root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_cynln")
 }
 
-[connection signal="player_entered" from="Spotter" to="." method="_on_spotter_player_entered"]
-[connection signal="player_exited" from="Spotter" to="." method="_on_spotter_player_exited"]
+[connection signal="player_entered" from="Main/Spotter" to="." method="_on_spotter_player_entered"]
+[connection signal="player_exited" from="Main/Spotter" to="." method="_on_spotter_player_exited"]

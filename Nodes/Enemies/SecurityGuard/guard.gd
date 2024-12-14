@@ -49,7 +49,8 @@ var currentState = STATES.WALK:
 func turnaround():
 	scale.x *= -1;
 	dir *= -1;
-
+	position.x += dir * 2;
+	
 func faceSpecificDir(value):
 	var newDir = sign(value);
 	if newDir != dir: #If you're confused by this, go check out the docs for node2d.scale. it turns out scaling things along the x axis is fake bullshit and results in stupid stuff happening.
@@ -139,7 +140,7 @@ func _on_spotter_player_exited(p) -> void:
 
 
 func _on_catching_range_body_entered(body: Node2D) -> void:
-	if body is Player:
+	if body is Player && canSeePlayer:
 		body.triggerGameOver();
 		currentState = STATES.ALERT;
 		playerIsCaught = true;
