@@ -38,10 +38,12 @@ tile_size = Vector2i(32, 32)
 sources/1 = SubResource("TileSetAtlasSource_1eqoj")
 sources/0 = SubResource("TileSetAtlasSource_ircl4")
 
+
 [sub_resource type="TileSet" id="TileSet_45ngx"]
 tile_size = Vector2i(32, 32)
 
 [node name="RoomBase" type="Node2D"]
+
 script = ExtResource("1_60n4u")
 
 [node name="RoomDetector" type="Area2D" parent="."]
