@@ -143,6 +143,7 @@ position = Vector2(1312, 720)
 [node name="CanvasLayer" type="CanvasLayer" parent="Radio"]
 
 [node name="TextEvent" parent="Radio/CanvasLayer" instance=ExtResource("13_e5h2h")]
+visible = false
 dialog = ">P
 Good. You opened this message.
 This isn't actually asari military command. They're busy tending to what's left of their planet.
