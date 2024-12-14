@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://Scenes/RoomManager/cool_camera.gd" id="2_ivv0c"]
 [ext_resource type="PackedScene" uid="uid://dakgb3c130kxp" path="res://Nodes/Player/Player.tscn" id="3_n7rup"]
 [ext_resource type="PackedScene" uid="uid://ds4pqty2ln7sg" path="res://Scenes/Actual Scenes/FirstRoom/FirstRoom.tscn" id="4_o7ojk"]
-[ext_resource type="AudioStream" uid="uid://cfuwsjgptr8k0" path="res://music/Bass.wav" id="5_f17oq"]
-[ext_resource type="PackedScene" uid="uid://x51y41t0s5h4" path="res://music/musicPlayer.tscn" id="5_xyjsi"]
+[ext_resource type="AudioStream" uid="uid://cfuwsjgptr8k0" path="res://Music/Bass.wav" id="5_f17oq"]
+[ext_resource type="PackedScene" uid="uid://x51y41t0s5h4" path="res://Music/musicPlayer.tscn" id="5_xyjsi"]
 [ext_resource type="PackedScene" uid="uid://e51l3kt8pea" path="res://Scenes/Actual Scenes/firstRadioRoom/firstRadioRoom.tscn" id="7_5n0cx"]
 [ext_resource type="PackedScene" uid="uid://cd6sba5vvdlss" path="res://Scenes/Actual Scenes/firstGuardRoom/firstGuardRoom.tscn" id="8_n73xp"]
 
