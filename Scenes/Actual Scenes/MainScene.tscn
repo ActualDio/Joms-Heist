@@ -62,6 +62,7 @@ script = ExtResource("2_ivv0c")
 
 [node name="Player" parent="." instance=ExtResource("3_n7rup")]
 position = Vector2(127, 120)
+debug = false
 
 [node name="FirstRoom" parent="." instance=ExtResource("4_o7ojk")]
 metadata/_edit_lock_ = true

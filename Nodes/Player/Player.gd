@@ -10,12 +10,17 @@ var caught = false;
 
 var respawnPoint : Vector2 = Vector2(120,120);
 
+@export var debug = true;
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready() -> void:
-	hide();
-	process_mode = ProcessMode.PROCESS_MODE_DISABLED;
+	if not debug:
+		hide();
+		process_mode = ProcessMode.PROCESS_MODE_DISABLED;
+	else:
+		process_mode = ProcessMode.PROCESS_MODE_ALWAYS;
 	
 func spawnPlayer():
 	show();
