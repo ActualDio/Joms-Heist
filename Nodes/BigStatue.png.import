@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xiveehrtocrn"
-path="res://.godot/imported/Statue.png-49256b8004af3f65643ab0ac088bd5fb.ctex"
+uid="uid://ybesq68n21he"
+path="res://.godot/imported/BigStatue.png-999fc17cce33d8401e52620a3f78e8ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Nodes/Enemies/SecurityGuard/Statue.png"
-dest_files=["res://.godot/imported/Statue.png-49256b8004af3f65643ab0ac088bd5fb.ctex"]
+source_file="res://Nodes/BigStatue.png"
+dest_files=["res://.godot/imported/BigStatue.png-999fc17cce33d8401e52620a3f78e8ab.ctex"]
 
 [params]
 

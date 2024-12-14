@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5bbpsxjfsifg"
-path="res://.godot/imported/table.png-b1dcfb35b31dadc66059d3415b0092fd.ctex"
+uid="uid://d2krskq3m34yp"
+path="res://.godot/imported/RadioOff.png-2ded153f8ff4903d6f5f8a1154eba656.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Nodes/Enemies/SecurityGuard/table.png"
-dest_files=["res://.godot/imported/table.png-b1dcfb35b31dadc66059d3415b0092fd.ctex"]
+source_file="res://Nodes/Radio/RadioOff.png"
+dest_files=["res://.godot/imported/RadioOff.png-2ded153f8ff4903d6f5f8a1154eba656.ctex"]
 
 [params]
 
