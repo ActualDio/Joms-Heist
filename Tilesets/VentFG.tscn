@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl41ef7jx57ea"]
+
+[ext_resource type="TileSet" uid="uid://c6wpaghtd67uo" path="res://Tilesets/VengFGTileset.tres" id="1_fs13n"]
+
+[node name="VentFG" type="TileMapLayer"]
+z_index = 10
+tile_set = ExtResource("1_fs13n")

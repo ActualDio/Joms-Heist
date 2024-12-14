@@ -10,8 +10,6 @@ var caught = false;
 
 var respawnPoint : Vector2 = Vector2(120,120);
 
-var bufferUncrouch = false;
-
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -24,30 +22,18 @@ func spawnPlayer():
 	process_mode = ProcessMode.PROCESS_MODE_INHERIT;
 
 func crouch():
-	bufferUncrouch = false;
 	crouching = true;
 	$MainSprite.hide();
 	$CrouchSprite.show();
-	$MainCollisionShape.shape.size.y = 24;
-	$MainCollisionShape.position.y = 11;
 
 
 func uncrouch():
 	crouching = false;
 	$MainSprite.show();
 	$CrouchSprite.hide();
-	$MainCollisionShape.shape.size.y = 49;
-	$MainCollisionShape.position.y = 0.5;
 	
 
 func _input(event):
-	if event.is_action_pressed("crouch") && is_on_floor() && !caught:
-		crouch();
-	if event.is_action_released("crouch"):
-		if !$CeilingDetector.is_colliding():
-			uncrouch();
-		else:
-			bufferUncrouch = true;
 	if event.is_action_pressed("interact") && caught:
 		caught = false;
 		position = respawnPoint;
@@ -80,12 +66,15 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	if !caught:
-		if bufferUncrouch && !$CeilingDetector.is_colliding():
+		if $CeilingDetector.is_colliding() && is_on_floor():
+			crouch();
+		else:
 			uncrouch();
 		if Input.is_action_just_pressed("Jump") and is_on_floor():
 			if !$CeilingDetector.is_colliding():
 				uncrouch();
-				velocity.y += JUMP_VELOCITY
+				velocity.y += JUMP_VELOCITY;
+				
 				if direction:
 					if direction > 0:
 						$AnimationPlayer.play("Jump_Right")

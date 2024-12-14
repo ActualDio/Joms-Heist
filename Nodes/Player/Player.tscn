@@ -14,7 +14,7 @@ specular_color = Color(0.753984, 0.753984, 0.753984, 1)
 specular_shininess = 0.08
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2qf8h"]
-size = Vector2(22, 49)
+size = Vector2(22, 24)
 
 [sub_resource type="Animation" id="Animation_x1s12"]
 resource_name = "Caught"
@@ -247,7 +247,7 @@ metadata/_edit_lock_ = true
 
 [node name="MainCollisionShape" type="CollisionShape2D" parent="."]
 z_index = -1
-position = Vector2(0, 0.5)
+position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_2qf8h")
 
 [node name="CrouchSprite" type="Sprite2D" parent="."]
