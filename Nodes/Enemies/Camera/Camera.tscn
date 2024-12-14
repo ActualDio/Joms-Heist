@@ -12,11 +12,11 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
+tracks/0/path = NodePath("Main:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0333333, 2.5, 5.03333, 7.5, 10),
+"times": PackedFloat32Array(0, 2.46667, 5, 7.46667, 9.96667),
 "transitions": PackedFloat32Array(1.5, 0.5, 1.5, 0.5, 1),
 "update": 0,
 "values": [0.0, 1.5708, 3.14159, 1.5708, 0.0]
@@ -35,6 +35,7 @@ _data = {
 script = ExtResource("1_2lgwj")
 
 [node name="Main" type="Node2D" parent="."]
+rotation = 0.21138
 
 [node name="Spotlight2" type="PointLight2D" parent="Main"]
 texture_filter = 1
