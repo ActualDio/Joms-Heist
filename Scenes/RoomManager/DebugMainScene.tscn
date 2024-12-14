@@ -1,15 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://bh0c4xaaceexu"]
+[gd_scene load_steps=12 format=3 uid="uid://bh0c4xaaceexu"]
 
 [ext_resource type="Script" path="res://Scenes/RoomManager/RoomManager.gd" id="1_1mgqm"]
 [ext_resource type="Script" path="res://Scenes/RoomManager/cool_camera.gd" id="2_u1be5"]
 [ext_resource type="PackedScene" uid="uid://do5c2yuje28lm" path="res://Scenes/TestScene/TestScene.tscn" id="3_k2q8v"]
-[ext_resource type="PackedScene" uid="uid://by64oaxfdx54t" path="res://Scenes/TestScene/TestRoom2.tscn" id="4_40sh2"]
 [ext_resource type="PackedScene" uid="uid://dakgb3c130kxp" path="res://Nodes/Player/Player.tscn" id="5_n0aa1"]
 [ext_resource type="PackedScene" uid="uid://dpl46krmwle4w" path="res://Scenes/TestScene/bigRoom.tscn" id="6_03pne"]
 [ext_resource type="AudioStream" uid="uid://cfuwsjgptr8k0" path="res://Music/Bass.wav" id="7_ddhsw"]
 [ext_resource type="AudioStream" uid="uid://bad6em73ern43" path="res://Music/Hi Hat.wav" id="8_tobky"]
 [ext_resource type="AudioStream" uid="uid://clx0wg65kc6d7" path="res://Music/Vibes.wav" id="9_gttja"]
 [ext_resource type="AudioStream" uid="uid://bggajos2uxjs8" path="res://Music/Drumbeat.wav" id="10_k6asc"]
+[ext_resource type="PackedScene" uid="uid://ds4pqty2ln7sg" path="res://Scenes/Actual Scenes/FirstRoom/FirstRoom.tscn" id="11_etriw"]
+[ext_resource type="PackedScene" uid="uid://do6asbpdufa28" path="res://Scenes/Actual Scenes/finalRoom/finalRoom.tscn" id="11_vmhak"]
 
 [node name="RoomManager" type="Node2D" node_paths=PackedStringArray("player", "camera")]
 script = ExtResource("1_1mgqm")
@@ -25,15 +26,11 @@ script = ExtResource("2_u1be5")
 [node name="TestScene" parent="." instance=ExtResource("3_k2q8v")]
 size = Vector2(576, 324)
 
-[node name="TestRoom2" parent="." instance=ExtResource("4_40sh2")]
-position = Vector2(576, 0)
-size = Vector2(576, 324)
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.196078, 0.196078, 0.207843, 1)
 
 [node name="Player" parent="." instance=ExtResource("5_n0aa1")]
-position = Vector2(73, 269)
+position = Vector2(-451, 115)
 
 [node name="BigRoom" parent="." instance=ExtResource("6_03pne")]
 position = Vector2(-64, 320)
@@ -60,3 +57,9 @@ autoplay = true
 process_mode = 3
 stream = ExtResource("10_k6asc")
 volume_db = -16.0
+
+[node name="FinalRoom" parent="." instance=ExtResource("11_vmhak")]
+position = Vector2(576, -672)
+
+[node name="FirstRoom" parent="." instance=ExtResource("11_etriw")]
+position = Vector2(-576, 0)

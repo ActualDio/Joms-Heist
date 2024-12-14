@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://kncue5wmf60t" path="res://Themes/TextBoxTheme.tres" id="1_gjql6"]
 [ext_resource type="Script" path="res://Nodes/UI/text_event.gd" id="1_mlikg"]
 [ext_resource type="Theme" uid="uid://d3jmr5vwxye1k" path="res://Themes/CharacterNameTheme.tres" id="2_6lb7v"]
-[ext_resource type="AudioStream" uid="uid://bafs8tdl2aln1" path="res://Sounds/Vine Boom (Sound Effect).mp3" id="4_3gema"]
+[ext_resource type="AudioStream" uid="uid://pbo245ogy8ja" path="res://Sounds/textNoise1.wav" id="4_mungk"]
 
 [sub_resource type="Animation" id="Animation_dsp1n"]
 resource_name = "In"
@@ -194,6 +194,8 @@ anchor_left = 0.5
 anchor_top = 0.095
 anchor_right = 0.5
 anchor_bottom = 0.095
+offset_top = 0.760002
+offset_bottom = 0.760002
 theme = ExtResource("2_6lb7v")
 
 [node name="Label" type="Label" parent="CharacterTitle"]
@@ -219,8 +221,13 @@ libraries = {
 }
 
 [node name="TextSoundPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_3gema")
+stream = ExtResource("4_mungk")
 volume_db = -9.629
 bus = &"UIAudio"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
