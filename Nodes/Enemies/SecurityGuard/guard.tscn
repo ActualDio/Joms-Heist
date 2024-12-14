@@ -1,18 +1,18 @@
-[gd_scene load_steps=17 format=3 uid="uid://dyg0f6apjeffw"]
+[gd_scene load_steps=18 format=3 uid="uid://dyg0f6apjeffw"]
 
 [ext_resource type="Script" path="res://Nodes/Enemies/SecurityGuard/guard.gd" id="1_0nq2f"]
-[ext_resource type="Texture2D" uid="uid://8mv8u03102yd" path="res://icon.svg" id="1_8pjau"]
+[ext_resource type="Texture2D" uid="uid://bfhenl358rab7" path="res://Nodes/Enemies/SecurityGuard/guardHead.png" id="2_7q5td"]
 [ext_resource type="PackedScene" uid="uid://bc87sc3p2vx6" path="res://Nodes/Spotter/Spotter.tscn" id="2_m30uk"]
-[ext_resource type="Texture2D" uid="uid://ba8thuk05ajfu" path="res://icon_small.png" id="3_k6ila"]
 [ext_resource type="Texture2D" uid="uid://8khaghg0gaa2" path="res://Lights/Spotlight.png" id="4_jjtgh"]
+[ext_resource type="Texture2D" uid="uid://dxc3loveevirw" path="res://Nodes/Enemies/SecurityGuard/guardbody.png" id="4_moq8i"]
+[ext_resource type="Texture2D" uid="uid://fb7p86pseuc1" path="res://Nodes/Enemies/SecurityGuard/guardFlashlight.png" id="5_qihi5"]
 [ext_resource type="AudioStream" uid="uid://bggajos2uxjs8" path="res://Music/Drumbeat.wav" id="5_u837a"]
 [ext_resource type="Script" path="res://Music/music_player_2d.gd" id="6_pj58b"]
 [ext_resource type="Texture2D" uid="uid://crdnr2sv473l0" path="res://Nodes/Spotter/bang.png" id="7_kaxsa"]
 [ext_resource type="Script" path="res://Nodes/Enemies/SecurityGuard/bang.gd" id="8_1d1rm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yqrw0"]
-radius = 16.0
-height = 62.0
+height = 50.0
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_w7wwo"]
 light_mode = 1
@@ -34,7 +34,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufy84"]
-size = Vector2(95.7169, 91.0809)
+size = Vector2(86.4111, 66.2407)
 
 [node name="Guard" type="CharacterBody2D"]
 collision_layer = 0
@@ -43,32 +43,35 @@ script = ExtResource("1_0nq2f")
 
 [node name="Head" type="Sprite2D" parent="."]
 z_index = 2
-position = Vector2(0, -16)
-texture = ExtResource("3_k6ila")
+position = Vector2(0, 2)
+texture = ExtResource("2_7q5td")
+offset = Vector2(-1.46, -7.985)
+flip_h = true
 
 [node name="Spotter" parent="Head" instance=ExtResource("2_m30uk")]
-position = Vector2(-5, 0)
+position = Vector2(0, -6)
 distance = 400.0
 number_of_rays = 12
 angle = 30.0
 
 [node name="sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_8pjau")
+texture = ExtResource("4_moq8i")
 region_enabled = true
 region_rect = Rect2(35.575, 40.76, 32, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 6)
 shape = SubResource("CapsuleShape2D_yqrw0")
 
 [node name="Flashlight" type="Sprite2D" parent="."]
-position = Vector2(0, 12)
-texture = ExtResource("1_8pjau")
-offset = Vector2(8.885, 0)
-region_enabled = true
-region_rect = Rect2(16, 16, 16, 8)
+z_index = 2
+position = Vector2(8, 18)
+texture = ExtResource("5_qihi5")
+offset = Vector2(2, 0)
+flip_h = true
 
 [node name="Spotlight" type="PointLight2D" parent="Flashlight"]
-position = Vector2(14, 0)
+position = Vector2(5, 0)
 rotation = 3.14159
 shadow_enabled = true
 texture = ExtResource("4_jjtgh")
@@ -109,7 +112,7 @@ position = Vector2(1, -14)
 scale = Vector2(0.752219, 0.724631)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CatchingRange"]
-position = Vector2(21.2704, 16.5602)
+position = Vector2(25.9233, 28.9803)
 scale = Vector2(0.999999, 1)
 shape = SubResource("RectangleShape2D_ufy84")
 metadata/_edit_lock_ = true
@@ -118,6 +121,11 @@ metadata/_edit_lock_ = true
 position = Vector2(19, 21)
 collision_mask = 2
 hit_from_inside = true
+
+[node name="Guardbody" type="Sprite2D" parent="."]
+position = Vector2(-1, 16)
+texture = ExtResource("4_moq8i")
+flip_h = true
 
 [connection signal="player_entered" from="Head/Spotter" to="." method="_on_spotter_player_entered"]
 [connection signal="player_exited" from="Head/Spotter" to="." method="_on_spotter_player_exited"]
