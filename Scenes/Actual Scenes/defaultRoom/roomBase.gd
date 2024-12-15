@@ -80,8 +80,3 @@ func _on_hero_repelling_finished() -> void: #ONLY CALLED WHEN STARTING THE GAME
 	if p is RoomManager:
 		p.player.spawnPlayer();
 		MusicSyncer.start_music();
-
-
-func _on_camera_player_entered(player: Variant) -> void:
-	if player is Player:
-		player.triggerGameOver();

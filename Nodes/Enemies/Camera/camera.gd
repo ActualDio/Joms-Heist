@@ -2,7 +2,6 @@ extends Node2D
 
 @export var moving = false;
 
-signal player_entered(player)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if moving:
@@ -15,7 +14,7 @@ func _process(delta: float) -> void:
 
 
 func _on_spotter_player_entered(p: Node2D) -> void:
-	emit_signal("player_entered", p)
+	p.triggerGameOver();
 	$Main/Spotlight2.color = Color.RED;
 	#$Bang.show();
 

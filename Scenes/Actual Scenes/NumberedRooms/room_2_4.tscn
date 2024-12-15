@@ -77,4 +77,3 @@ position = Vector2(384, 64)
 
 [connection signal="body_entered" from="RoomDetector" to="." method="_on_room_detector_body_entered"]
 [connection signal="body_exited" from="RoomDetector" to="." method="_on_room_detector_body_exited"]
-[connection signal="player_entered" from="Camera" to="." method="_on_camera_player_entered"]

@@ -90,6 +90,5 @@ This is some test dialogue because I'm dumb and can't figure out tutorials ahead
 
 [connection signal="body_entered" from="RoomDetector" to="." method="_on_room_detector_body_entered"]
 [connection signal="body_exited" from="RoomDetector" to="." method="_on_room_detector_body_exited"]
-[connection signal="player_entered" from="Camera" to="." method="_on_camera_player_entered"]
 [connection signal="interacted" from="Radio" to="Radio/CanvasLayer/TextEvent" method="beginEvent"]
 [connection signal="finished" from="Radio/CanvasLayer/TextEvent" to="." method="_on_text_event_finished"]

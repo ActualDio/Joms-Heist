@@ -35,7 +35,6 @@ _data = {
 script = ExtResource("1_2lgwj")
 
 [node name="Main" type="Node2D" parent="."]
-rotation = 0.21138
 
 [node name="Spotlight2" type="PointLight2D" parent="Main"]
 texture_filter = 1
@@ -62,7 +61,7 @@ rotation = -3.14159
 texture = ExtResource("3_exiu3")
 
 [node name="Spotter" parent="Main" instance=ExtResource("1_r07y2")]
-number_of_rays = 10
+number_of_rays = 13
 angle = 41.772
 
 [node name="CameraMotion" type="AnimationPlayer" parent="Main"]
@@ -72,4 +71,3 @@ libraries = {
 }
 
 [connection signal="player_entered" from="Main/Spotter" to="." method="_on_spotter_player_entered"]
-[connection signal="player_exited" from="Main/Spotter" to="." method="_on_spotter_player_exited"]
