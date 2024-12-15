@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://btx2qw3isgxaw"]
+[gd_scene load_steps=26 format=3 uid="uid://btx2qw3isgxaw"]
 
 [ext_resource type="Texture2D" uid="uid://bc101u4d0kld7" path="res://Tilesets/tiles.png" id="1_npubf"]
 [ext_resource type="Texture2D" uid="uid://c7clcbeyildj3" path="res://Tilesets/Tilenormal.png" id="2_v3bro"]
 [ext_resource type="Texture2D" uid="uid://dtclttm7ycjfu" path="res://Tilesets/tileSpecular.png" id="3_dgx11"]
 [ext_resource type="Texture2D" uid="uid://dqhanmg7l228h" path="res://Tilesets/walltiles.png" id="3_ltnui"]
+[ext_resource type="Texture2D" uid="uid://cly7vautgxvjq" path="res://Tilesets/ventBG.png" id="5_11hcy"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_78onl"]
 polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -918,6 +919,13 @@ texture_region_size = Vector2i(32, 32)
 11:3/0/terrains_peering_bit/bottom_side = 1
 11:3/0/terrains_peering_bit/top_side = 1
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a1nad"]
+texture = ExtResource("5_11hcy")
+texture_region_size = Vector2i(32, 32)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:2/0/physics_layer_0/polygon_0/one_way = true
+
 [sub_resource type="TileSet" id="TileSet_naa8e"]
 tile_size = Vector2i(32, 32)
 occlusion_layer_0/light_mask = 1
@@ -929,6 +937,7 @@ terrain_set_0/terrain_1/name = "Marble 1"
 terrain_set_0/terrain_1/color = Color(0.852292, 0.872947, 0.885968, 1)
 sources/0 = SubResource("TileSetAtlasSource_lp18y")
 sources/1 = SubResource("TileSetAtlasSource_4qrjp")
+sources/2 = SubResource("TileSetAtlasSource_a1nad")
 
 [node name="TileMap" type="TileMapLayer"]
 light_mask = 2
