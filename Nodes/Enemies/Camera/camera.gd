@@ -31,10 +31,10 @@ func _process(delta: float) -> void:
 func _on_spotter_player_entered(p: Node2D) -> void:
 	p.triggerGameOver();
 	$Main/Spotlight2.color = Color.RED;
-	$Main/CameraMotion.pause();
+	#$Main/CameraMotion.pause();
 	#$Bang.show();
 
 
 func _on_spotter_player_exited(player: Variant) -> void:
 	$Main/Spotlight2.color = Color.WHITE;
-	$Main/CameraMotion.play();
+	#$Main/CameraMotion.play();

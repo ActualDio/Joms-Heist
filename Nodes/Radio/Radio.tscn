@@ -35,9 +35,8 @@ shape = SubResource("RectangleShape2D_53tvj")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
 stream = ExtResource("4_t35ep")
-volume_db = -8.346
 max_distance = 400.0
-attenuation = 0.574349
+attenuation = 0.517632
 bus = &"Horns"
 script = ExtResource("5_ntbxv")
 

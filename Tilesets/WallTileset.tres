@@ -1,0 +1,50 @@
+[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://y38ty770pl0s"]
+
+[ext_resource type="Texture2D" uid="uid://d12ltvbhj6bp2" path="res://Tilesets/wallfix.png" id="1_t5kl2"]
+[ext_resource type="Texture2D" uid="uid://bc101u4d0kld7" path="res://Tilesets/tiles.png" id="2_174mf"]
+[ext_resource type="Texture2D" uid="uid://c4ma7b2w35sga" path="res://Tilesets/wallnormal.png" id="2_dkjul"]
+[ext_resource type="Texture2D" uid="uid://c7clcbeyildj3" path="res://Tilesets/Tilenormal.png" id="3_e3h5h"]
+[ext_resource type="Texture2D" uid="uid://dtclttm7ycjfu" path="res://Tilesets/tileSpecular.png" id="4_xdrln"]
+[ext_resource type="Texture2D" uid="uid://dqhanmg7l228h" path="res://Tilesets/walltiles.png" id="6_du2x1"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ycfl0"]
+diffuse_texture = ExtResource("1_t5kl2")
+normal_texture = ExtResource("2_dkjul")
+specular_shininess = 0.24
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f5y33"]
+texture = SubResource("CanvasTexture_ycfl0")
+texture_region_size = Vector2i(32, 32)
+1:1/size_in_atlas = Vector2i(3, 3)
+1:1/0 = 0
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_npuvf"]
+diffuse_texture = ExtResource("2_174mf")
+normal_texture = ExtResource("3_e3h5h")
+specular_texture = ExtResource("4_xdrln")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hhuvw"]
+texture = SubResource("CanvasTexture_npuvf")
+texture_region_size = Vector2i(32, 32)
+9:3/0 = 0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_n0qst"]
+diffuse_texture = ExtResource("6_du2x1")
+normal_texture = ExtResource("3_e3h5h")
+specular_shininess = 0.27
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ukb6r"]
+texture = SubResource("CanvasTexture_n0qst")
+texture_region_size = Vector2i(32, 32)
+9:3/0 = 0
+
+[resource]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_hhuvw")
+sources/0 = SubResource("TileSetAtlasSource_f5y33")
+sources/2 = SubResource("TileSetAtlasSource_ukb6r")

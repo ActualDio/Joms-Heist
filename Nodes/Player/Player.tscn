@@ -361,7 +361,7 @@ shape = SubResource("RectangleShape2D_2qf8h")
 
 [node name="CrouchSprite" type="Sprite2D" parent="."]
 z_as_relative = false
-position = Vector2(1, 12)
+position = Vector2(1, 15)
 texture = ExtResource("4_vmlps")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
