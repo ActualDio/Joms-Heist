@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://x1ocic5qq35o"]
+[gd_scene load_steps=17 format=4 uid="uid://x1ocic5qq35o"]
 
 [ext_resource type="Script" path="res://Scenes/Actual Scenes/defaultRoom/roomBase.gd" id="1_j6pjl"]
 [ext_resource type="PackedScene" uid="uid://btx2qw3isgxaw" path="res://Tilesets/IndoorTileMap.tscn" id="2_j5wna"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cd7ttkfqpg2s4" path="res://Nodes/Enemies/Camera/Camera.tscn" id="7_wxcv0"]
 [ext_resource type="PackedScene" uid="uid://dyg0f6apjeffw" path="res://Nodes/Enemies/SecurityGuard/guard.tscn" id="8_io2hw"]
 [ext_resource type="PackedScene" uid="uid://dqyd834ynbp7i" path="res://Nodes/Enemies/SecurityGuard/guard_barrier.tscn" id="9_5hh57"]
+[ext_resource type="PackedScene" uid="uid://dakgb3c130kxp" path="res://Nodes/Player/Player.tscn" id="10_1csqw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2u1h0"]
 resource_local_to_scene = true
@@ -97,8 +98,11 @@ position = Vector2(400, 184)
 rotation = 1.5708
 angle = 3
 
-[node name="GuardBarrier2" parent="." instance=ExtResource("9_5hh57")]
-position = Vector2(329, 239)
+[node name="Player" parent="." instance=ExtResource("10_1csqw")]
+position = Vector2(467, 152)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(392, 128)
 
 [connection signal="body_entered" from="RoomDetector" to="." method="_on_room_detector_body_entered"]
 [connection signal="body_exited" from="RoomDetector" to="." method="_on_room_detector_body_exited"]
