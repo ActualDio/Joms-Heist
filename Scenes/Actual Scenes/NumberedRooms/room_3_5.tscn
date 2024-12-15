@@ -79,11 +79,6 @@ rotation = 1.78024
 moving = true
 angle = 3
 
-[node name="Camera3" parent="." instance=ExtResource("7_nf0d7")]
-visible = false
-position = Vector2(257, 201)
-moving = true
-
 [node name="Camera4" parent="." instance=ExtResource("7_nf0d7")]
 position = Vector2(513, 161)
 moving = true

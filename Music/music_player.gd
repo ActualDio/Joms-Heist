@@ -11,6 +11,7 @@ func _ready() -> void:
 	else:
 		volume_db = maxVol;
 	MusicSyncer.connect("begin",play);
+	MusicSyncer.connect("end",stop);
 
 func fadeIn():
 	var tween = get_tree().create_tween()

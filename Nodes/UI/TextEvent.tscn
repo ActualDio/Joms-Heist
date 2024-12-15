@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8f42wsc3qnoi"]
+[gd_scene load_steps=11 format=3 uid="uid://c8f42wsc3qnoi"]
 
 [ext_resource type="Theme" uid="uid://kncue5wmf60t" path="res://Themes/TextBoxTheme.tres" id="1_gjql6"]
 [ext_resource type="Script" path="res://Nodes/UI/text_event.gd" id="1_mlikg"]
 [ext_resource type="Theme" uid="uid://d3jmr5vwxye1k" path="res://Themes/CharacterNameTheme.tres" id="2_6lb7v"]
 [ext_resource type="AudioStream" uid="uid://pbo245ogy8ja" path="res://Sounds/textNoise1.wav" id="4_mungk"]
+[ext_resource type="AudioStream" uid="uid://djyj5rw13ukkf" path="res://Sounds/PMaybeModified.wav" id="5_4goyj"]
+[ext_resource type="AudioStream" uid="uid://dao8l51mdhn7m" path="res://Sounds/robonoise.wav" id="6_idilp"]
 
 [sub_resource type="Animation" id="Animation_dsp1n"]
 resource_name = "In"
@@ -142,10 +144,48 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mlikg")
-dialog = ">TestDialog
-This is some test dialog!
-I'm not sure if it will work right...
-This sentence is gonna be really really long on purpose, look how long it is!"
+dialog = ">P
+Hey, J?
+>J
+Yes?
+>P
+I know we're not supposed to ask and all that but, what's your name?
+>J
+If you know you're not supposed to know, then why do you ask?
+>P
+Iunno. Maybe we could be friends or something. Wanna get a drink after work?
+>J
+Pass. I only drink alone.
+>P
+That defeats the point of drinking!
+>J
+Maybe for you. I prefer to drink a strong cider while sinking in my sofa, and staring at my fireplace.
+>P
+Alright grandma, very old fashioned of you. And so mature!
+>J
+Quiet down, kid. Besides, I can barely stand you as-is, I can't imagine what you'd be drunk.
+>P
+Oh, but I don't drink.
+>J
+Didn't you just ask me out on drinks?
+>P
+I drink soda! Alcohol tastes kinda bad.
+>J
+Alright.
+>P
+What about, uh... Tea?
+>J
+What about it?
+>P
+Would you like some?
+>J
+Actual tea or that sugary trash with bubbles in it that I saw you drinking yesterday?
+>P
+Either! But I guess not the sugary trash, if you put it that way.
+>J
+I'll think about it.
+>P
+Yippee!"
 
 [node name="Darkener" type="ColorRect" parent="."]
 modulate = Color(0.585062, 0.585062, 0.585062, 1)
@@ -229,5 +269,12 @@ bus = &"UIAudio"
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="PSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_4goyj")
+
+[node name="robonoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_idilp")
+volume_db = -12.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]

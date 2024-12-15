@@ -130,7 +130,9 @@ func _on_spotter_player_entered(p) -> void:
 	objectReference = p;
 	canSeePlayer = true;
 	lastKnownPlayerPos = p.global_position;
-	currentState = STATES.ALERT;
+	if !currentState == STATES.ALERT:
+		currentState = STATES.ALERT;
+		$AlertNoise.play();
 	$Bang.show();
 
 func _on_spotter_player_exited(p) -> void:

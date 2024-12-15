@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://n30jappoy8ok"]
+[gd_scene load_steps=19 format=4 uid="uid://n30jappoy8ok"]
 
 [ext_resource type="Script" path="res://Scenes/Actual Scenes/defaultRoom/roomBase.gd" id="1_8gvau"]
 [ext_resource type="PackedScene" uid="uid://btx2qw3isgxaw" path="res://Tilesets/IndoorTileMap.tscn" id="2_2sfv3"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://dyg0f6apjeffw" path="res://Nodes/Enemies/SecurityGuard/guard.tscn" id="8_dvji0"]
 [ext_resource type="PackedScene" uid="uid://c2gcvlfknvrec" path="res://Tilesets/VentBG.tscn" id="9_jx51c"]
 [ext_resource type="PackedScene" uid="uid://cl41ef7jx57ea" path="res://Tilesets/VentFG.tscn" id="10_mb5wf"]
+[ext_resource type="Texture2D" uid="uid://cnxq4xh28ltd0" path="res://Lights/hangingLamp.png" id="11_eqln7"]
+[ext_resource type="Texture2D" uid="uid://32dhufc57eyr" path="res://Lights/slightlynarrow.png" id="12_dhlwc"]
+[ext_resource type="PackedScene" uid="uid://dqyd834ynbp7i" path="res://Nodes/Enemies/SecurityGuard/guard_barrier.tscn" id="13_rgrcx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ep62c"]
 resource_local_to_scene = true
@@ -82,6 +85,25 @@ tile_map_data = PackedByteArray("AAAXAAsAAAAAAAAAAAAWAAsAAAABAAIAAAAWAAwAAAABAAE
 
 [node name="VentFG" parent="." instance=ExtResource("10_mb5wf")]
 tile_map_data = PackedByteArray("AAAUAAwAAAADAAEAAAAVAAwAAAAAAAAAAAAWAAwAAAABAAEAAAAWAAsAAAABAAIAAAAXAAsAAAAAAAAAAAALAAsAAAAEAAAAAAALAAwAAAABAAMAAAAMAAwAAAAAAAAAAAANAAwAAAAAAAAAAAAOAAwAAAAAAAAAAAAPAAwAAAAAAAAAAAAQAAwAAAAAAAAAAAARAAwAAAAAAAAAAAASAAwAAAAEAAEAAAA=")
+
+[node name="HangingLamp" type="Sprite2D" parent="."]
+position = Vector2(127, 79)
+texture = ExtResource("11_eqln7")
+
+[node name="PointLight2D" type="PointLight2D" parent="HangingLamp"]
+position = Vector2(0, 13)
+shadow_enabled = true
+texture = ExtResource("12_dhlwc")
+offset = Vector2(0, 159.675)
+
+[node name="PointLight2D2" type="PointLight2D" parent="HangingLamp/PointLight2D"]
+range_item_cull_mask = 2
+texture = ExtResource("12_dhlwc")
+offset = Vector2(0, 159.675)
+metadata/_edit_lock_ = true
+
+[node name="GuardBarrier" parent="HangingLamp/PointLight2D" instance=ExtResource("13_rgrcx")]
+position = Vector2(-125, 147)
 
 [connection signal="body_entered" from="RoomDetector" to="." method="_on_room_detector_body_entered"]
 [connection signal="body_exited" from="RoomDetector" to="." method="_on_room_detector_body_exited"]

@@ -1,0 +1,229 @@
+----FIRST DIALOGUE
+
+>P Smooth.
+>J Thank you!
+>P Sarcasm, dumdum. It's a stealth mission and you broke a window first thing first!
+>J That's on you. You made the plan, and the plan clearly states to enter through the window, and rappel—
+>P By using the glass cutter!
+>J I wasn't given a glass cutter.
+>P It's in your bag!
+>J I wasn't given a bag.
+>P You— Hold on—
+>J ...
+>P Oh, yeah, it's still here. My bad!
+>J So, do I come back to HQ or...
+>P Nah, keep it rollin'! You know what to do. Don't get spotted and all that. Toodaloo! I mean, over!
+>J ...
+...It's a multifrequency radio, we don't need to say over. We haven't been— Oh, she hung up. Whatever. Alright. Alright! I'm a professional, I've got this. 
+Let's rock.
+
+
+----END OF THE GAME
+>J P?
+>P I see it.
+>J Just how... Rich is this guy?
+>P More than we thought! Must be getting a daily delivery of gold through an helicopter or something! I wonder how he even got this rich to begin with. Isn't that fucked up? To think there's people starving and then there's this guy. Probably got rich by stealing from people, like a cult leader or something! Feeding them promises that—
+>J P.
+What now?
+>P Okay, damn, sorry. God forbid I say anything! Well, you should have a tracker in the bag— wait, shit.
+>J I think someone's coming.
+>P Uh... Oh, yeah. An alarm tripped. Sorry, I wasn't paying attention!
+>J I'm getting out of here.
+>P Yeaaaahhhh, good call. Bring the small one with you, though!
+>J Won't that let them know someone was here?
+>P That's the point! I'll explain back at HQ, now go!
+>J Sigh. Alright. Put the kettle on.
+>P On it!
+
+----BEFORE GUARD
+>P J, I'm picking up on some MOD signals.
+>J ...MOD signals?
+>P Moderate Output Distress signals.
+>J Someone in need of help? Why do we care?
+>P First off, rude! We at JADS love helping people.
+>J Right, but—
+>P Either way, not someone in need of help. It's one of those new robo-guards.
+>J Oh.
+>P If they spot you, they'll tattle on you.
+>J ...Tattle.
+>P Tattle. Verb. To secretly tell someone in authority that someone else has done something bad, often in order to cause trouble.
+>J Girl. What's your problem?
+>P Hehe!
+
+-----CAUGHT
+>P Oh well. Back we go! This time for sure~
+
+----MISC.
+>P
+Who packs your bags?
+>J
+Hm?
+>P
+Who's putting things in your bags?
+>J
+Whoever is working at equipment, I'd assume. Shouldn't you know this better than me?
+>P
+I definitely need to ask the higher ups, then! There's something wrong going on.
+>J
+The only thing wrong is that you forgot to give it to me.
+>P
+Oh, still on that? It'll be fine! But no, listen— So, I opened the bag, cuz I was bored. Pretty standard equipment at first... A switchknife, a tourniquet, a replacement band for the mask, bandaids, gun—
+>J
+Cut it short.
+>P
+There's a bag of opened chips.
+>J
+I—
+>P
+And I think this is a note with someone's number, and a bunch of lipstick marks.
+>J
+That's my bag.
+>P
+Yeah! I think someone in armory's got a crush on you or something, but they're doing a shit job—
+>J
+No, that's MY bag.
+>P
+Yes, it's your— OH.
+C-Carry on.
+
+
+>P
+—ry funny! Last time I was there I saw this kid trying to pick up a watermelon, right? It was inside a plastic bag, so she pulled on the handles to lift it up, but y'know how shitty those bags are, it just snapped and she punched herself in the face!
+>J
+...?
+>P
+Yeah, I don't know why this stuff keeps happening there. Yeah, it's crazy! It feels like it's a hotspot for funny shit.
+>J
+P?
+>P
+Huh? OH—
+>RoboVoice
+Thank you for calling Justice And Dismay Services. Your call is very important to us. You are currently number — one — in queue. Please hold.
+Thank you for calling Justice And Dismay Serv—
+>P
+Hello!
+>J
+...Hot mic?
+>P
+I don't know what you're talking about.
+>J
+Taking personal calls during work hours, aren't we?
+>P
+Stop being such a cop...
+>J
+I wasn't gonna narc on you or anything.
+>P
+Yeah, yeah. Carry on with your mission!
+
+
+>P
+Hey, J?
+>J
+Yes?
+>P
+I know we're not supposed to ask and all that but, what's your name?
+>J
+If you know you're not supposed to know, then why do you ask?
+>P
+Iunno. Maybe we could be friends or something. Wanna get a drink after work?
+>J
+Pass. I only drink alone.
+>P
+That defeats the point of drinking!
+>J
+Maybe for you. I prefer to drink a strong cider while sinking in my sofa, and staring at my fireplace.
+>P
+Alright grandma, very old fashioned of you. And so mature!
+>J
+Quiet down, kid. Besides, I can barely stand you as-is, I can't imagine what you'd be drunk.
+>P
+Oh, but I don't drink.
+>J
+Didn't you just ask me out on drinks?
+>P
+I drink soda! Alcohol tastes kinda bad.
+>J
+Alright.
+>P
+What about, uh... Tea?
+>J
+What about it?
+>P
+Would you like some?
+>J
+Actual tea or that sugary trash with bubbles in it that I saw you drinking yesterday?
+>P
+Either! But I guess not the sugary trash, if you put it that way.
+>J
+I'll think about it.
+>P
+Yippee!
+
+
+>P
+Jojo!
+>J
+...?
+>P
+Jayjay!
+>J
+Lost your marbles?
+>P
+J....Janette? Jenny. Joe! Yeah, why not Joe?
+>J
+Are you trying to find my name? It doesn't start with a J.
+>P
+I know! I'm trying to get you a cute nickname.
+>J
+A nickname?
+>P
+Yes. A name given to someone for humorous or familiar reasons, in place of their actual names. Usually a short cutesy version of their name!
+>J
+Do you think I don't know what a nickname is?
+>P
+Iunno, why'd you ask then?
+>J
+Because— Why not just stick to the codename?
+>P
+UGH, you're SO boring sometimes. Whatever, J-Chan.
+>J
+...Cringe.
+>P
+C'mon, try it!
+>J
+What? Calling you P-Chan?
+>P
+Yeah!
+>J
+No.
+>P
+But you just did! Gottem~!
+>J
+...I should have never told you that I watched Utena.
+>P
+The sacred bond of anime has been formed and we will forever be friends! You still gotta watch the greatest anime of all time—
+>J
+Oops. I pressed the wrong button!
+
+
+>P I got a question for you!
+>J Is it important?
+>P Extremely. I'm trying to win an internet argument.
+>J ...We're at work.
+>P Yeah, yeah! Anyway! So, assume you have an identical clone of yourself, and you have to fight to death.
+>J I'd seduce her and snap her neck.
+>P ...No, that's— Would that work?
+>J It'd work on me.
+>P Wow! You're way more of a narcissist than I thought.
+>J 'mkay. I'm going back to my mission.
+>P No, no, wait! You have to pick between a knife and a bat. Your clone gets the other!
+>J Knife.
+>P Because...?
+>J I know how to kill with a knife.
+>P Oh! Have you ever?
+>J ...Well, no, but theoretically I do have the training for it.
+>P Right... Okay, but, like, let's assume you have no prior training.
+>J Then bat, clearly.
+>P Hell yeah! Thank you!
+>J ...
+Weirdo.

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://eyfcl52o3vn1"]
+
+[ext_resource type="Texture2D" uid="uid://cnxq4xh28ltd0" path="res://Lights/hangingLamp.png" id="1_u7ro2"]
+[ext_resource type="Texture2D" uid="uid://ca3i8gco6pm8k" path="res://Lights/LessWide.png" id="2_pvd4t"]
+
+[node name="HangingLamp" type="Sprite2D"]
+position = Vector2(364, 81)
+texture = ExtResource("1_u7ro2")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, 13)
+shadow_enabled = true
+texture = ExtResource("2_pvd4t")
+offset = Vector2(0, 159.675)
+
+[node name="PointLight2D2" type="PointLight2D" parent="PointLight2D"]
+range_item_cull_mask = 2
+texture = ExtResource("2_pvd4t")
+offset = Vector2(0, 159.675)
+metadata/_edit_lock_ = true

@@ -43,7 +43,6 @@ script = ExtResource("5_ntbxv")
 
 [node name="OnSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_glis7")
-volume_db = -8.515
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

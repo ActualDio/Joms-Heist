@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://chncjn52kc7b"]
+[gd_scene load_steps=31 format=3 uid="uid://chncjn52kc7b"]
 
 [ext_resource type="Script" path="res://Scenes/RoomManager/RoomManager.gd" id="1_1afyg"]
 [ext_resource type="Script" path="res://Scenes/RoomManager/cool_camera.gd" id="2_ivv0c"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bad6em73ern43" path="res://Music/Hi Hat.wav" id="4_eo1xq"]
 [ext_resource type="PackedScene" uid="uid://ds4pqty2ln7sg" path="res://Scenes/Actual Scenes/FirstRoom/FirstRoom.tscn" id="4_o7ojk"]
 [ext_resource type="AudioStream" uid="uid://cfuwsjgptr8k0" path="res://Music/Bass.wav" id="5_f17oq"]
+[ext_resource type="AudioStream" uid="uid://clx0wg65kc6d7" path="res://Music/Vibes.wav" id="5_rypvo"]
 [ext_resource type="PackedScene" uid="uid://x51y41t0s5h4" path="res://Music/musicPlayer.tscn" id="5_xyjsi"]
 [ext_resource type="PackedScene" uid="uid://e51l3kt8pea" path="res://Scenes/Actual Scenes/firstRadioRoom/firstRadioRoom.tscn" id="7_5n0cx"]
 [ext_resource type="PackedScene" uid="uid://dneqjcw1ok6qe" path="res://Scenes/Actual Scenes/NumberedRooms/room_1_3.tscn" id="8_qb7ay"]
@@ -43,14 +44,24 @@ color = Color(0.333836, 0.34078, 0.453577, 1)
 [node name="Bass" parent="." instance=ExtResource("5_xyjsi")]
 process_mode = 3
 stream = ExtResource("5_f17oq")
-volume_db = -16.803
+volume_db = -7.0
 bus = &"Bass"
+maxVol = -7.0
 
 [node name="HiHat" parent="." instance=ExtResource("5_xyjsi")]
 process_mode = 3
 stream = ExtResource("4_eo1xq")
-volume_db = -16.803
+volume_db = -15.0
 bus = &"Hi Hat"
+maxVol = -15.0
+startMuted = true
+
+[node name="Vibes" parent="." instance=ExtResource("5_xyjsi")]
+process_mode = 3
+stream = ExtResource("5_rypvo")
+volume_db = -3.5
+bus = &"Hi Hat"
+maxVol = -3.5
 startMuted = true
 
 [node name="CoolCamera" type="Camera2D" parent="."]
@@ -118,9 +129,19 @@ position = Vector2(3454, 736)
 
 [node name="HiHatTrigger" parent="." instance=ExtResource("31_dncfq")]
 position = Vector2(768, 448)
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HiHatTrigger"]
 position = Vector2(16, -16)
 shape = SubResource("RectangleShape2D_jj86f")
 
+[node name="HiHatTrigger2" parent="." instance=ExtResource("31_dncfq")]
+position = Vector2(2624, 1152)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HiHatTrigger2"]
+position = Vector2(-2016, -274)
+shape = SubResource("RectangleShape2D_jj86f")
+
 [connection signal="on_player_entered" from="HiHatTrigger" to="HiHat" method="fadeIn"]
+[connection signal="on_player_entered" from="HiHatTrigger2" to="Vibes" method="fadeIn"]

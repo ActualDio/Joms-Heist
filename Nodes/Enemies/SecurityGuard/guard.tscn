@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dyg0f6apjeffw"]
+[gd_scene load_steps=19 format=3 uid="uid://dyg0f6apjeffw"]
 
 [ext_resource type="Script" path="res://Nodes/Enemies/SecurityGuard/guard.gd" id="1_0nq2f"]
 [ext_resource type="Texture2D" uid="uid://bfhenl358rab7" path="res://Nodes/Enemies/SecurityGuard/guardHead.png" id="2_7q5td"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Music/music_player_2d.gd" id="6_pj58b"]
 [ext_resource type="Texture2D" uid="uid://crdnr2sv473l0" path="res://Nodes/Spotter/bang.png" id="7_kaxsa"]
 [ext_resource type="Script" path="res://Nodes/Enemies/SecurityGuard/bang.gd" id="8_1d1rm"]
+[ext_resource type="AudioStream" uid="uid://bofklab8osbe0" path="res://Sounds/GuardAlert.wav" id="11_lpxwr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yqrw0"]
 height = 50.0
@@ -73,6 +74,7 @@ flip_h = true
 [node name="Spotlight" type="PointLight2D" parent="Flashlight"]
 position = Vector2(5, 0)
 rotation = 3.14159
+scale = Vector2(0.495869, 0.400425)
 shadow_enabled = true
 texture = ExtResource("4_jjtgh")
 offset = Vector2(-291, 0)
@@ -126,6 +128,10 @@ hit_from_inside = true
 position = Vector2(-1, 16)
 texture = ExtResource("4_moq8i")
 flip_h = true
+
+[node name="AlertNoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_lpxwr")
+volume_db = -13.987
 
 [connection signal="player_entered" from="Head/Spotter" to="." method="_on_spotter_player_entered"]
 [connection signal="player_exited" from="Head/Spotter" to="." method="_on_spotter_player_exited"]

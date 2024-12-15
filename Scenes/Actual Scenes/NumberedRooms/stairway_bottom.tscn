@@ -73,6 +73,37 @@ position = Vector2(180, 272)
 
 [node name="TextEvent" parent="Radio/CanvasLayer" instance=ExtResource("8_yctwp")]
 visible = false
+dialog = ">P
+Who packs your bags?
+>J
+Hm?
+>P
+Who's putting things in your bags?
+>J
+Whoever is working at equipment, I'd assume. Shouldn't you know this better than me?
+>P
+I definitely need to ask the higher ups, then! There's something wrong going on.
+>J
+The only thing wrong is that you forgot to give it to me.
+>P
+Oh, still on that? It'll be fine! But no, listen— So, I opened the bag, cuz I was bored. Pretty standard equipment at first... A switchknife, a tourniquet, a replacement band for the mask, bandaids, gun—
+>J
+Cut it short.
+>P
+There's a bag of opened chips.
+>J
+I—
+>P
+And I think this is a note with someone's number, and a bunch of lipstick marks.
+>J
+That's my bag.
+>P
+Yeah! I think someone in armory's got a crush on you or something, but they're doing a shit job—
+>J
+No, that's MY bag.
+>P
+Yes, it's your— OH.
+C-Carry on."
 
 [node name="Camera" parent="." instance=ExtResource("8_lygsd")]
 position = Vector2(81, 34)

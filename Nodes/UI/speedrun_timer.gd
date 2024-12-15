@@ -12,9 +12,13 @@ var active = false;
 func _ready() -> void:
 	if autoStart:
 		start();
+	MusicSyncer.connect("end",stop);
 
 func start():
 	active = true;
+
+func stop():
+	active = false;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

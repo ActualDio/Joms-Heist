@@ -1,11 +1,29 @@
-[gd_scene load_steps=18 format=3 uid="uid://dakgb3c130kxp"]
+[gd_scene load_steps=36 format=3 uid="uid://dakgb3c130kxp"]
 
 [ext_resource type="Script" path="res://Nodes/Player/Player.gd" id="1_0gjy5"]
 [ext_resource type="Theme" uid="uid://cy6cin16y5237" path="res://Themes/gameOver.tres" id="4_228a8"]
 [ext_resource type="Texture2D" uid="uid://coehknbvkda2e" path="res://Nodes/Player/playerCaught.png" id="4_k1rir"]
+[ext_resource type="Texture2D" uid="uid://cfjf0xmk33nhq" path="res://Nodes/Player/jump fall and crawl animation/jomcrawl1.png" id="4_vmlps"]
 [ext_resource type="Texture2D" uid="uid://c2qfx1hqcd55d" path="res://Lights/PointLight.png" id="4_wjucq"]
-[ext_resource type="Texture2D" uid="uid://crstbl2vp36gs" path="res://Nodes/Player/characterjCrouchPlaceholder.png" id="6_gcht1"]
 [ext_resource type="Texture2D" uid="uid://66xhad8u6ujh" path="res://Nodes/Player/characterjflipped.png" id="6_lsidf"]
+[ext_resource type="Texture2D" uid="uid://cwq3e0ht7021t" path="res://Nodes/Player/jump fall and crawl animation/jomjump.png" id="6_pd0o1"]
+[ext_resource type="Texture2D" uid="uid://bi85knsw68ffk" path="res://Nodes/Player/idle/jomidle1.png" id="6_wqjxc"]
+[ext_resource type="Texture2D" uid="uid://e55qkikvxq22" path="res://Nodes/Player/idle/jomidle2.png" id="7_b2sxv"]
+[ext_resource type="Texture2D" uid="uid://dbtkg515ufxsd" path="res://Nodes/Player/idle/jomidle3.png" id="8_stvl1"]
+[ext_resource type="Texture2D" uid="uid://drtcshpd6ptvb" path="res://Nodes/Player/idle/jomidle4.png" id="9_744sm"]
+[ext_resource type="Texture2D" uid="uid://d0mn4yqy7uvh6" path="res://Nodes/Player/idle/jomidle5.png" id="10_vwnqe"]
+[ext_resource type="Texture2D" uid="uid://y0w6lno8sr14" path="res://Nodes/Player/idle/jomidle6.png" id="11_87r0h"]
+[ext_resource type="Texture2D" uid="uid://bdocqf7xsr2m8" path="res://Nodes/Player/jump fall and crawl animation/jomfall.png" id="13_0ae2h"]
+[ext_resource type="Texture2D" uid="uid://dw5xagf8mmxrw" path="res://Nodes/Player/run animation/jomrun1.png" id="14_8vt1s"]
+[ext_resource type="Texture2D" uid="uid://2c64ra5dc2rn" path="res://Nodes/Player/run animation/jomrun2.png" id="15_lr2et"]
+[ext_resource type="Texture2D" uid="uid://c2movu7klajpo" path="res://Nodes/Player/run animation/jomrun3.png" id="16_n7ye5"]
+[ext_resource type="Texture2D" uid="uid://c2djh4vhhqlfu" path="res://Nodes/Player/run animation/jomrun4.png" id="17_li2jn"]
+[ext_resource type="Texture2D" uid="uid://crihf581oil1q" path="res://Nodes/Player/run animation/jomrun5.png" id="18_u2pr0"]
+[ext_resource type="Texture2D" uid="uid://co6px8th2upw0" path="res://Nodes/Player/run animation/jomrun6.png" id="19_1emws"]
+[ext_resource type="Texture2D" uid="uid://onnpnoy2tmn6" path="res://Nodes/Player/run animation/jomrun7.png" id="20_7gbbi"]
+[ext_resource type="Texture2D" uid="uid://clpqg51nhrkch" path="res://Nodes/Player/jump fall and crawl animation/jomcrawl2.png" id="21_mrux8"]
+[ext_resource type="Texture2D" uid="uid://c3axlakrjpoas" path="res://Nodes/Player/jump fall and crawl animation/jomcrawl3.png" id="22_4xw8u"]
+[ext_resource type="Texture2D" uid="uid://bmeuh7lvrnun8" path="res://Nodes/Player/jump fall and crawl animation/jomcrawl4.png" id="23_5qbjq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ob2ct"]
 
@@ -29,6 +47,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_cieli"]
 resource_name = "Jump_Left"
+length = 0.0333367
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -51,11 +70,12 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_k1rir")]
+"values": [ExtResource("6_pd0o1")]
 }
 
 [sub_resource type="Animation" id="Animation_lxelt"]
 resource_name = "Jump_Right"
+length = 0.0333367
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -78,7 +98,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_k1rir")]
+"values": [ExtResource("6_pd0o1")]
 }
 
 [sub_resource type="Animation" id="Animation_1223q"]
@@ -131,9 +151,24 @@ tracks/3/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CrouchSprite:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_vmlps")]
+}
 
 [sub_resource type="Animation" id="Animation_o4wx3"]
 resource_name = "default"
+length = 2.00003
+loop_mode = 1
+step = 0.333333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -153,14 +188,15 @@ tracks/1/path = NodePath("MainSprite:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.333333, 0.666667, 1, 1.33333, 1.66667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("6_lsidf")]
+"values": [ExtResource("6_wqjxc"), ExtResource("7_b2sxv"), ExtResource("8_stvl1"), ExtResource("9_744sm"), ExtResource("10_vwnqe"), ExtResource("11_87r0h")]
 }
 
 [sub_resource type="Animation" id="Animation_e0yp4"]
 resource_name = "in_air"
+length = 0.0333367
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -171,13 +207,14 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_k1rir")]
+"values": [ExtResource("13_0ae2h")]
 }
 
 [sub_resource type="Animation" id="Animation_ytyls"]
 resource_name = "walkingLeft"
-length = 0.733337
+length = 0.583342
 loop_mode = 1
+step = 0.0833333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -197,10 +234,10 @@ tracks/1/path = NodePath("MainSprite:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("6_lsidf")]
+"values": [ExtResource("14_8vt1s"), ExtResource("15_lr2et"), ExtResource("16_n7ye5"), ExtResource("17_li2jn"), ExtResource("18_u2pr0"), ExtResource("19_1emws"), ExtResource("20_7gbbi")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -213,12 +250,25 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CrouchSprite:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("21_mrux8"), ExtResource("4_vmlps"), ExtResource("22_4xw8u"), ExtResource("23_5qbjq"), ExtResource("4_vmlps"), ExtResource("22_4xw8u"), ExtResource("23_5qbjq")]
 }
 
 [sub_resource type="Animation" id="Animation_4pkp5"]
 resource_name = "walkingRight"
-length = 0.733337
+length = 0.583342
 loop_mode = 1
+step = 0.0833333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -238,10 +288,10 @@ tracks/1/path = NodePath("MainSprite:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("6_lsidf")]
+"values": [ExtResource("14_8vt1s"), ExtResource("15_lr2et"), ExtResource("16_n7ye5"), ExtResource("17_li2jn"), ExtResource("18_u2pr0"), ExtResource("19_1emws"), ExtResource("20_7gbbi")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -254,6 +304,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CrouchSprite:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("21_mrux8"), ExtResource("4_vmlps"), ExtResource("22_4xw8u"), ExtResource("23_5qbjq"), ExtResource("4_vmlps"), ExtResource("22_4xw8u"), ExtResource("23_5qbjq")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n28ow"]
@@ -298,11 +360,9 @@ position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_2qf8h")
 
 [node name="CrouchSprite" type="Sprite2D" parent="."]
-visible = false
 z_as_relative = false
-position = Vector2(2, 11)
-texture = ExtResource("6_gcht1")
-metadata/_edit_lock_ = true
+position = Vector2(1, 12)
+texture = ExtResource("4_vmlps")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -75,6 +75,39 @@ position = Vector2(146, 112)
 
 [node name="FirstCall" parent="CanvasLayer" instance=ExtResource("4_n3sli")]
 visible = false
+dialog = ">P
+Smooth.
+>J
+Thank you!
+>P
+Sarcasm, dumdum. It's a stealth mission and you broke a window first thing first!
+>J
+That's on you. You made the plan, and the plan clearly states to enter through the window, and rappel—
+>P
+By using the glass cutter!
+>J
+I wasn't given a glass cutter.
+>P
+It's in your bag!
+>J
+I wasn't given a bag.
+>P
+You— Hold on—
+>J
+...
+>P
+Oh, yeah, it's still here. My bad!
+>J
+So, do I come back to HQ or...
+>P
+Nah, keep it rollin'! You know what to do. Don't get spotted and all that. Toodaloo! I mean, over!
+>J
+...
+...It's a multifrequency radio, we don't need to say over. We haven't been—
+Oh, she hung up.
+Whatever. Alright. Alright!
+I'm a professional, I've got this. 
+Let's rock."
 
 [node name="BG" type="TileMapLayer" parent="."]
 modulate = Color(0.5394, 0.55158, 0.58, 1)
