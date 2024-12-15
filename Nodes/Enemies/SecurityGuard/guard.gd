@@ -97,7 +97,7 @@ func _physics_process(delta: float) -> void:
 		STATES.PERSUIT:
 			if canSeePlayer:
 				alertness = alertNessThreshold;
-				lastKnownPlayerPos = objectReference.position;
+				lastKnownPlayerPos = objectReference.global_position;
 			else:
 				alertness -= delta;
 			if alertness <= 0:

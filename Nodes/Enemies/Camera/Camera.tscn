@@ -71,3 +71,4 @@ libraries = {
 }
 
 [connection signal="player_entered" from="Main/Spotter" to="." method="_on_spotter_player_entered"]
+[connection signal="player_exited" from="Main/Spotter" to="." method="_on_spotter_player_exited"]
