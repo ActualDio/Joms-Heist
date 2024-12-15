@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cd7ttkfqpg2s4"]
+[gd_scene load_steps=12 format=3 uid="uid://cd7ttkfqpg2s4"]
 
 [ext_resource type="Script" path="res://Nodes/Enemies/Camera/camera.gd" id="1_2lgwj"]
 [ext_resource type="PackedScene" uid="uid://bc87sc3p2vx6" path="res://Nodes/Spotter/Spotter.tscn" id="1_r07y2"]
@@ -20,23 +20,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(-2, -2, 1),
 "update": 0,
 "values": [0.0, 2.35619, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_usvv3"]
-resource_name = "90DegreeArc"
-length = 10.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Main:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.46667, 5, 7.46667, 9.96667),
-"transitions": PackedFloat32Array(1.5, 0.5, 1.5, 0.5, 1),
-"update": 0,
-"values": [0.0, 1.5708, 3.14159, 1.5708, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_a7qml"]
@@ -69,10 +52,63 @@ tracks/0/keys = {
 "values": [0.0]
 }
 
+[sub_resource type="Animation" id="Animation_usvv3"]
+resource_name = "180DegreeArc"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.46667, 5, 7.46667, 9.96667),
+"transitions": PackedFloat32Array(1.5, 0.5, 1.5, 0.5, 1),
+"update": 0,
+"values": [0.0, 1.5708, 3.14159, 1.5708, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_g4l8t"]
+resource_name = "90DegreeArc"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(-2, -2, 1),
+"update": 0,
+"values": [0.0, 1.5708, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_6snk3"]
+resource_name = "45DegreeArc"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(-2, -2, 1),
+"update": 0,
+"values": [0.0, 0.785398, 0.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cynln"]
 _data = {
 "135DegreeArc": SubResource("Animation_sdq7l"),
-"90DegreeArc": SubResource("Animation_usvv3"),
+"180DegreeArc": SubResource("Animation_usvv3"),
+"45DegreeArc": SubResource("Animation_6snk3"),
+"90DegreeArc": SubResource("Animation_g4l8t"),
 "RESET": SubResource("Animation_a7qml"),
 "default": SubResource("Animation_jm888")
 }

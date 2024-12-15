@@ -9,9 +9,15 @@ func _ready() -> void:
 	if moving:
 		match angle:
 			0:
-				$Main/CameraMotion.play("90DegreeArc");
+				$Main/CameraMotion.play("180DegreeArc");
 			1:
-				$Main/CameraMotion.play("default")
+				$Main/CameraMotion.play("135DegreeArc")
+			2:
+				$Main/CameraMotion.play("90DegreeArc")
+			3:
+				$Main/CameraMotion.play("45DegreeArc")
+			4:
+				$Main/CameraMotion.play("default");
 		
 	else:
 		$Main/CameraMotion.play("default");
