@@ -17,6 +17,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		$RadioOn.show()
 		$Radio.hide()
+		$OnSound.play();
 		$Y.show();
 		active = true;
 		body.respawnPoint = global_position;

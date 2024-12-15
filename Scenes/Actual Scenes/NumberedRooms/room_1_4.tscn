@@ -82,7 +82,6 @@ moving = true
 position = Vector2(689, 271)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Radio"]
-visible = false
 
 [node name="TextEvent" parent="Radio/CanvasLayer" instance=ExtResource("10_h4y3v")]
 visible = false
@@ -91,5 +90,6 @@ This is some test dialogue because I'm dumb and can't figure out tutorials ahead
 
 [connection signal="body_entered" from="RoomDetector" to="." method="_on_room_detector_body_entered"]
 [connection signal="body_exited" from="RoomDetector" to="." method="_on_room_detector_body_exited"]
+[connection signal="interacted" from="Radio" to="." method="_on_radio_interacted"]
 [connection signal="interacted" from="Radio" to="Radio/CanvasLayer/TextEvent" method="beginEvent"]
 [connection signal="finished" from="Radio/CanvasLayer/TextEvent" to="." method="_on_text_event_finished"]

@@ -3,4 +3,5 @@
 [ext_resource type="TileSet" uid="uid://d241hb2gknd67" path="res://Tilesets/VentBGTileset.tres" id="1_do76e"]
 
 [node name="VentBG" type="TileMapLayer"]
+z_index = -1
 tile_set = ExtResource("1_do76e")
