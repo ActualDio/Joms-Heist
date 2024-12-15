@@ -76,14 +76,21 @@ tile_set = SubResource("TileSet_45ngx")
 
 [node name="Camera" parent="." instance=ExtResource("7_mbvhx")]
 position = Vector2(383, 81)
-rotation = 0.958186
+rotation = 0.467748
+moving = true
+angle = 3
 
 [node name="Guard" parent="." instance=ExtResource("8_efaj2")]
 position = Vector2(399, 254)
 
 [node name="GuardBarrier" parent="." instance=ExtResource("9_2ckx7")]
-position = Vector2(586, 245)
+position = Vector2(719, 243)
+
+[node name="Camera2" parent="." instance=ExtResource("7_mbvhx")]
+position = Vector2(100, 36)
+rotation = 0.546288
+moving = true
+angle = 1
 
 [connection signal="body_entered" from="RoomDetector" to="." method="_on_room_detector_body_entered"]
 [connection signal="body_exited" from="RoomDetector" to="." method="_on_room_detector_body_exited"]
-[connection signal="player_entered" from="Camera" to="." method="_on_camera_player_entered"]
