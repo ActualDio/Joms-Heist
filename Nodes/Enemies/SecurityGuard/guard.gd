@@ -83,7 +83,7 @@ func _physics_process(delta: float) -> void:
 			velocity.x = 0;
 			if canSeePlayer:
 				alertness += delta;
-				lastKnownPlayerPos = objectReference.position;
+				lastKnownPlayerPos = objectReference.global_position;
 			else:
 				alertness -= delta;
 			var angle_to_target = global_position.direction_to(lastKnownPlayerPos).angle();
@@ -97,7 +97,7 @@ func _physics_process(delta: float) -> void:
 		STATES.PERSUIT:
 			if canSeePlayer:
 				alertness = alertNessThreshold;
-				lastKnownPlayerPos = objectReference.position;
+				lastKnownPlayerPos = objectReference.global_position;
 			else:
 				alertness -= delta;
 			if alertness <= 0:
@@ -129,12 +129,12 @@ func _physics_process(delta: float) -> void:
 func _on_spotter_player_entered(p) -> void:
 	objectReference = p;
 	canSeePlayer = true;
-	lastKnownPlayerPos = p.position;
+	lastKnownPlayerPos = p.global_position;
 	currentState = STATES.ALERT;
 	$Bang.show();
 
 func _on_spotter_player_exited(p) -> void:
-	lastKnownPlayerPos = p.position;
+	lastKnownPlayerPos = p.global_position;
 	canSeePlayer = false;
 	$Bang.hide();
 

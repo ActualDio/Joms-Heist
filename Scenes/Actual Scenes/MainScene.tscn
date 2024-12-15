@@ -55,6 +55,7 @@ startMuted = true
 
 [node name="CoolCamera" type="Camera2D" parent="."]
 process_mode = 3
+visible = false
 position = Vector2(288, 162)
 zoom = Vector2(2, 2)
 position_smoothing_speed = 6.0
