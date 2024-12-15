@@ -260,6 +260,7 @@ Either! But I guess not the sugary trash, if you put it that way.
 I'll think about it.
 >P
 Yippee!"
+delay_between_chars = 0.035
 metadata/_edit_horizontal_guides_ = [622.0]
 
 [node name="Darkener" type="ColorRect" parent="."]
@@ -338,14 +339,18 @@ libraries = {
 [node name="TextSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_mungk")
 volume_db = -9.629
+max_polyphony = 3
 bus = &"UIAudio"
 
 [node name="PSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_4goyj")
+volume_db = -9.123
+max_polyphony = 3
 
 [node name="robonoise" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_idilp")
-volume_db = -12.0
+volume_db = -7.134
+max_polyphony = 3
 
 [node name="Profiles" type="Control" parent="."]
 modulate = Color(1, 1, 1, 0)

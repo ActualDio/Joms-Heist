@@ -112,7 +112,7 @@ texture = ExtResource("11_a18mp")
 texture_scale = 3.65
 
 [node name="Radio" parent="." instance=ExtResource("12_2auul")]
-position = Vector2(191, 720)
+position = Vector2(1128, 720)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Radio"]
 
@@ -141,6 +141,7 @@ vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Radio/CanvasLayer/TextureRect"]
 stream = ExtResource("14_yjiqd")
+volume_db = -6.0
 
 [node name="TextEvent" parent="Radio/CanvasLayer" instance=ExtResource("13_e5h2h")]
 visible = false
@@ -204,6 +205,6 @@ texture = ExtResource("14_qiwdg")
 [connection signal="body_exited" from="RoomDetector" to="." method="_on_room_detector_body_exited"]
 [connection signal="interacted" from="Radio" to="." method="_on_radio_interacted"]
 [connection signal="interacted" from="Radio" to="Radio/CanvasLayer/TextEvent" method="beginEvent"]
-[connection signal="finished" from="Radio/CanvasLayer/TextEvent" to="Radio/CanvasLayer/TextureRect" method="show"]
 [connection signal="finished" from="Radio/CanvasLayer/TextEvent" to="Radio/CanvasLayer/TextureRect" method="_on_text_event_finished"]
+[connection signal="finished" from="Radio/CanvasLayer/TextEvent" to="Radio/CanvasLayer/TextureRect" method="show"]
 [connection signal="finished" from="Radio/CanvasLayer/TextEvent" to="Radio/CanvasLayer/TextureRect/AudioStreamPlayer" method="play"]

@@ -44,6 +44,7 @@ func _input(event):
 		caught = false;
 		$AnimationPlayer.play("default");
 		$CaughtText.hide();
+		$CaughtText/caughtText.deactivate();
 
 func triggerGameOver():
 	uncrouch();
@@ -51,6 +52,7 @@ func triggerGameOver():
 	velocity = Vector2.ZERO;
 	$AnimationPlayer.play("Caught");
 	$CaughtText.show();
+	$CaughtText/caughtText.activate();
 	
 
 func _physics_process(delta):

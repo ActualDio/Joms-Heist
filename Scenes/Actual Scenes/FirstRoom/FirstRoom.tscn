@@ -58,6 +58,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAQABAAEAAAAAAAEAAQABAAEAAAAAAAIAAQABAAE
 metadata/_edit_lock_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
 
 [node name="Title" parent="CanvasLayer" instance=ExtResource("2_wb8a4")]
 visible = false

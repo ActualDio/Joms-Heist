@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dakgb3c130kxp"]
+[gd_scene load_steps=40 format=3 uid="uid://dakgb3c130kxp"]
 
 [ext_resource type="Script" path="res://Nodes/Player/Player.gd" id="1_0gjy5"]
 [ext_resource type="Theme" uid="uid://cy6cin16y5237" path="res://Themes/gameOver.tres" id="4_228a8"]
@@ -24,6 +24,10 @@
 [ext_resource type="Texture2D" uid="uid://clpqg51nhrkch" path="res://Nodes/Player/jump fall and crawl animation/jomcrawl2.png" id="21_mrux8"]
 [ext_resource type="Texture2D" uid="uid://c3axlakrjpoas" path="res://Nodes/Player/jump fall and crawl animation/jomcrawl3.png" id="22_4xw8u"]
 [ext_resource type="Texture2D" uid="uid://bmeuh7lvrnun8" path="res://Nodes/Player/jump fall and crawl animation/jomcrawl4.png" id="23_5qbjq"]
+[ext_resource type="Theme" uid="uid://kncue5wmf60t" path="res://Themes/TextBoxTheme.tres" id="25_f32v6"]
+[ext_resource type="Script" path="res://Nodes/Player/caught_text.gd" id="26_0ye1c"]
+[ext_resource type="Theme" uid="uid://d3jmr5vwxye1k" path="res://Themes/CharacterNameTheme.tres" id="27_vdrtg"]
+[ext_resource type="AudioStream" uid="uid://pbo245ogy8ja" path="res://Sounds/textNoise1.wav" id="28_7kbe0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ob2ct"]
 
@@ -404,3 +408,72 @@ theme_override_font_sizes/font_size = 36
 text = "Press the R key or Y button to try again"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="caughtText" type="Control" parent="CaughtText"]
+layout_mode = 3
+anchor_left = 0.1
+anchor_top = 0.13
+anchor_right = 0.9
+anchor_bottom = 0.258
+offset_top = 431.8
+offset_bottom = 431.8
+grow_horizontal = 2
+theme = ExtResource("25_f32v6")
+script = ExtResource("26_0ye1c")
+
+[node name="Background" type="ColorRect" parent="CaughtText/caughtText"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.717647)
+
+[node name="TextContent" type="RichTextLabel" parent="CaughtText/caughtText"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.025
+anchor_right = 0.99
+anchor_bottom = 0.925
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Oh well. Back we go! This time for sure~"
+scroll_active = false
+
+[node name="CharacterTitle" type="Control" parent="CaughtText/caughtText"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.095
+anchor_right = 0.5
+anchor_bottom = 0.095
+offset_left = 3.05176e-05
+offset_top = -29.4224
+offset_right = 3.05176e-05
+offset_bottom = -29.4224
+theme = ExtResource("27_vdrtg")
+
+[node name="Label" type="Label" parent="CaughtText/caughtText/CharacterTitle"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -97.5
+offset_top = -19.0
+offset_right = 97.5
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "J
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextSoundPlayer" type="AudioStreamPlayer" parent="CaughtText/caughtText"]
+stream = ExtResource("28_7kbe0")
+volume_db = -9.629
+bus = &"UIAudio"
