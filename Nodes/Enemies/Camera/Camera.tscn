@@ -143,7 +143,7 @@ rotation = -3.14159
 texture = ExtResource("3_exiu3")
 
 [node name="Spotter" parent="Main" instance=ExtResource("1_r07y2")]
-number_of_rays = 16
+number_of_rays = 14
 angle = 41.772
 
 [node name="CameraMotion" type="AnimationPlayer" parent="Main"]

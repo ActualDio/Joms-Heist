@@ -1,2 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
+Exports/Jads Heist.exe
+Exports/Joms Heist.console.exe

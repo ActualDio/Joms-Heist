@@ -44,9 +44,9 @@ color = Color(0.333836, 0.34078, 0.453577, 1)
 [node name="Bass" parent="." instance=ExtResource("5_xyjsi")]
 process_mode = 3
 stream = ExtResource("5_f17oq")
-volume_db = -7.0
+volume_db = -10.0
 bus = &"Bass"
-maxVol = -7.0
+maxVol = -10.0
 
 [node name="HiHat" parent="." instance=ExtResource("5_xyjsi")]
 process_mode = 3

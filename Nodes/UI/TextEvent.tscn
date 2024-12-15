@@ -1,11 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8f42wsc3qnoi"]
+[gd_scene load_steps=13 format=3 uid="uid://c8f42wsc3qnoi"]
 
 [ext_resource type="Theme" uid="uid://kncue5wmf60t" path="res://Themes/TextBoxTheme.tres" id="1_gjql6"]
 [ext_resource type="Script" path="res://Nodes/UI/text_event.gd" id="1_mlikg"]
 [ext_resource type="Theme" uid="uid://d3jmr5vwxye1k" path="res://Themes/CharacterNameTheme.tres" id="2_6lb7v"]
 [ext_resource type="AudioStream" uid="uid://pbo245ogy8ja" path="res://Sounds/textNoise1.wav" id="4_mungk"]
 [ext_resource type="AudioStream" uid="uid://djyj5rw13ukkf" path="res://Sounds/PMaybeModified.wav" id="5_4goyj"]
+[ext_resource type="Texture2D" uid="uid://wppbu6o8vkrw" path="res://Nodes/UI/portraits/p-chan.png" id="5_lpbaj"]
 [ext_resource type="AudioStream" uid="uid://dao8l51mdhn7m" path="res://Sounds/robonoise.wav" id="6_idilp"]
+[ext_resource type="Texture2D" uid="uid://dmnfo8jrfkg68" path="res://Nodes/UI/portraits/agent-joms.png" id="6_w7wjm"]
 
 [sub_resource type="Animation" id="Animation_dsp1n"]
 resource_name = "In"
@@ -46,6 +48,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Profiles:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(0, 465), Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Profiles:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_r4miq"]
@@ -88,6 +114,30 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Profiles:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1.51572, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 471)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Profiles:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_nfntk"]
 length = 0.001
@@ -126,6 +176,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Profiles:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Profiles:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cuian"]
@@ -186,6 +260,7 @@ Either! But I guess not the sugary trash, if you put it that way.
 I'll think about it.
 >P
 Yippee!"
+metadata/_edit_horizontal_guides_ = [622.0]
 
 [node name="Darkener" type="ColorRect" parent="."]
 modulate = Color(0.585062, 0.585062, 0.585062, 1)
@@ -265,16 +340,44 @@ stream = ExtResource("4_mungk")
 volume_db = -9.629
 bus = &"UIAudio"
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="PSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_4goyj")
 
 [node name="robonoise" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_idilp")
 volume_db = -12.0
+
+[node name="Profiles" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PProfile" type="TextureRect" parent="Profiles"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.622
+anchor_right = 0.15
+anchor_bottom = 0.622
+offset_left = 166.8
+offset_top = 147.12
+offset_right = 516.8
+offset_bottom = 597.12
+grow_vertical = 2
+texture = ExtResource("5_lpbaj")
+
+[node name="JProfile" type="TextureRect" parent="Profiles"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.85
+anchor_top = 0.27
+anchor_right = 0.85
+anchor_bottom = 0.27
+offset_left = 595.2
+offset_top = 161.2
+offset_right = 945.2
+offset_bottom = 611.2
+texture = ExtResource("6_w7wjm")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]

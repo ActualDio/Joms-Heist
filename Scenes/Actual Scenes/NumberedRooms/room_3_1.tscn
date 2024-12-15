@@ -63,5 +63,9 @@ tile_map_data = PackedByteArray("AADj/w0AAAAEAAAAAADj/w4AAAABAAMAAADk/w4AAAAAAAA
 [node name="VentFG" parent="VentBG" instance=ExtResource("11_ic3nt")]
 tile_map_data = PackedByteArray("AADj/w0AAAAEAAAAAADj/w4AAAABAAMAAADk/w4AAAAAAAAAAADl/w4AAAAAAAAAAADm/w4AAAAAAAAAAADn/w4AAAAAAAAAAADo/w4AAAABAAAAAADo/w8AAAABAAMAAADp/w8AAAAAAAAAAADq/w8AAAAAAAAAAADr/w8AAAAAAAAAAADs/w8AAAAAAAAAAADt/w8AAAABAAEAAADt/w4AAAABAAIAAADu/w4AAAAAAAAAAADv/w4AAAAAAAAAAADw/w4AAAABAAEAAADw/w0AAAAEAAAAAAD0/w0AAAAEAAAAAAD0/w4AAAAAAAEAAAD0/w8AAAABAAMAAAD1/w8AAAAAAAAAAAD2/w8AAAAAAAAAAAD3/w8AAAAAAAAAAAD4/w8AAAAAAAAAAAD5/w8AAAAAAAAAAADw/wYAAAADAAEAAADx/wYAAAAAAAAAAADy/wYAAAAEAAEAAAA=")
 
+[node name="GuardBarrier2" parent="." instance=ExtResource("8_ytflg")]
+position = Vector2(527, 298)
+rotation = 1.5708
+
 [connection signal="body_entered" from="RoomDetector" to="." method="_on_room_detector_body_entered"]
 [connection signal="body_exited" from="RoomDetector" to="." method="_on_room_detector_body_exited"]

@@ -24,6 +24,16 @@ func _ready() -> void:
 	if dialogArray[0].begins_with(">"): #if the first line denotes a character... (this should usually be the case)
 		charLabel.text = dialogArray[0].lstrip(">");
 		currentLine += 1;
+		match charLabel.text:
+			"P":
+				$Profiles/PProfile.modulate = Color.WHITE;
+				$Profiles/JProfile.modulate = Color.DIM_GRAY;
+			"J":
+				$Profiles/JProfile.modulate = Color.WHITE;
+				$Profiles/PProfile.modulate = Color.DIM_GRAY;
+			_:
+				$Profiles/JProfile.modulate = Color.DIM_GRAY;
+				$Profiles/PProfile.modulate = Color.DIM_GRAY;
 	hide();
 
 func beginEvent(_unused = null):
@@ -45,12 +55,15 @@ func _process(delta: float) -> void:
 			if countDown <= 0:
 				textLabel.visible_characters += 1;
 				if textLabel.text[textLabel.visible_characters - 1] != " ":
-					if charLabel.text == "P":
-						$PSoundPlayer.play();
-					elif charLabel.text == "Robotic Voice":
-						$robonoise.play();
-					else:
-						$TextSoundPlayer.play();
+					match charLabel.text:
+						"P":
+							$PSoundPlayer.play();
+						"J":
+							$TextSoundPlayer.play();
+						"Robotic Voice":
+							$robonoise.play();
+						_:
+							$TextSoundPlayer.play();
 				countDown += delay_between_chars;
 
 func _input(event: InputEvent) -> void:
@@ -70,6 +83,16 @@ func updateText():
 	if dialogArray[currentLine].begins_with(">"):
 		charLabel.text = dialogArray[currentLine].lstrip(">");
 		currentLine += 1;
+		match charLabel.text:
+			"P":
+				$Profiles/PProfile.modulate = Color.WHITE;
+				$Profiles/JProfile.modulate = Color.DIM_GRAY;
+			"J":
+				$Profiles/JProfile.modulate = Color.WHITE;
+				$Profiles/PProfile.modulate = Color.DIM_GRAY;
+			_:
+				$Profiles/JProfile.modulate = Color.DIM_GRAY;
+				$Profiles/PProfile.modulate = Color.DIM_GRAY;
 	textLabel.text = dialogArray[currentLine];
 	textLabel.visible_characters = 0;
 

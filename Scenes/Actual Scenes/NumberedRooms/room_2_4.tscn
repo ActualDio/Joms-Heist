@@ -22,6 +22,12 @@ size = Vector2(768, 446)
 cameraPos = Vector2(384, 223)
 cameraZoom = 1.5
 
+[node name="GuardBarrier" parent="." instance=ExtResource("13_rgrcx")]
+position = Vector2(353, 237)
+
+[node name="GuardBarrier2" parent="." instance=ExtResource("13_rgrcx")]
+position = Vector2(2, 239)
+
 [node name="RoomDetector" type="Area2D" parent="."]
 process_mode = 3
 visible = false
@@ -72,9 +78,6 @@ range_item_cull_mask = 2
 texture = ExtResource("12_dhlwc")
 offset = Vector2(0, 159.675)
 metadata/_edit_lock_ = true
-
-[node name="GuardBarrier" parent="HangingLamp/PointLight2D" instance=ExtResource("13_rgrcx")]
-position = Vector2(-125, 147)
 
 [connection signal="body_entered" from="RoomDetector" to="." method="_on_room_detector_body_entered"]
 [connection signal="body_exited" from="RoomDetector" to="." method="_on_room_detector_body_exited"]
